@@ -22,14 +22,6 @@
     "haskell": false
   },
   "cSpell.words": [
-    "foldl",
-    "foldr",
-    "scanl",
-    "zipWith",
-    "unwords",
-    "unlines",
-    "zipWith",
-    "elems",
     "hakyll",
     "pandoc"
   ],

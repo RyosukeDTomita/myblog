@@ -1,6 +1,7 @@
 # myblog
 
 ![mit license](https://img.shields.io/github/license/RyosukeDTomita/myblog)
+[![Deploy Blog](https://github.com/RyosukeDTomita/myblog/actions/workflows/deploy.yml/badge.svg)](https://github.com/RyosukeDTomita/myblog/actions/workflows/deploy.yml)
 
 ## INDEX
 
