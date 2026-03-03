@@ -1,22 +1,70 @@
 # myblog
 
-Hakyll blog powered by Nix + Stack and deployed with GitHub Actions to GitHub Pages.
+![mit license](https://img.shields.io/github/license/RyosukeDTomita/myblog)
 
-## Requirements
+## INDEX
 
-- Nix with flakes enabled
+- [ABOUT](#about)
+- [ENVIRONMENT](#environment)
+- [HOW TO USE](#how-to-use)
+- [For Developers](#for-developers)
+- [Copyright and Credit](#copyright-and-credit)
+- [Notes](#notes)
 
-## Local development
+## ABOUT
+
+my blog site built with [Haskell](https://www.haskell.org/) library [Hakyll](https://jaspervdj.be/hakyll/).
+
+---
+
+## ENVIRONMENT
+
+- Nix Flake
+  - treefmt
+- Haskell
+  - Hakyll
+  - Stack
+  - Ormolu
+- mdformat
+
+---
+
+## HOW TO USE
+
+1. Fork this repository.
+2. Go to `Settings` -> `Pages` and set **Source** to `main` branch.
+3. Write articles in `posts/` directory.
+
+    ```markdown
+    ---
+    title: My post
+    date: 2026-03-03
+    ---
+
+    Hello, world.
+    ```
+
+4. Push to `main` branch and wait for GitHub Actions to build and deploy.
+5. Your blog will be available at `https://<username>.github.io/`.
+
+---
+
+## For Developer
+
+### Development server on localhost
 
 ```bash
+cd /home/sigma/myblog
 nix develop
 stack build
 stack exec site watch
 ```
 
-Open http://127.0.0.1:8000.
+Go to [http://127.0.0.1:8000](http://127.0.0.1:8000)
 
-## Formatting
+`stack.yaml` is configured to use GHC from `nix develop` (`system-ghc: true`), so Stack does not install its own GHC.
+
+### Formatting
 
 ```bash
 nix fmt
@@ -27,31 +75,17 @@ This runs `treefmt` with:
 - `ormolu` for `*.hs`
 - `mdformat` for `*.md`
 
-## Build once
-
-```bash
-nix develop --command stack exec site build
-```
-
-Generated files are placed under `_site/`.
-
-## Publishing
-
-1. Push to `main`.
-1. GitHub Actions workflow builds and deploys to GitHub Pages.
-1. In repository settings, set **Pages -> Source** to **GitHub Actions**.
-
-For a user site, use a repository named `<username>.github.io`.
-
-## Writing posts
-
-Add a markdown file under `posts/`:
-
-```markdown
----
-title: My post
-date: 2026-03-03
 ---
 
-Hello, world.
-```
+## Copyright and Credit
+
+This blog is built using [Hakyll](https://jaspervdj.be/hakyll/), a static site generator library written in Haskell.
+
+Copyright (c) 2026 sigma.
+
+---
+
+## Notes
+
+- Please keep the Hakyll attribution when reusing this repository template.
+- Make sure your own posts/assets comply with their original licenses before publishing.

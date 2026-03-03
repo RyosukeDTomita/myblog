@@ -18,3 +18,5 @@ cabal.sandbox.config
 stack.yaml.lock
 _cache/
 _site/
+
+.direnv/

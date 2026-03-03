@@ -17,6 +17,7 @@
       system:
       let
         pkgs = import nixpkgs { inherit system; };
+        haskellPackages = pkgs.haskell.packages.ghc967 or pkgs.haskell.packages.ghc96;
         treefmtEval = treefmt-nix.lib.evalModule pkgs ./treefmt.nix;
       in
       {
@@ -24,14 +25,15 @@
 
         devShells.default = pkgs.mkShell {
           packages = [
-            pkgs.zsh
             pkgs.stack
             pkgs.treefmt
             pkgs.ormolu
             pkgs.python3Packages.mdformat
-            pkgs.haskell.packages.ghc96.ghc
-            pkgs.haskell.packages.ghc96.cabal-install
-            pkgs.haskell.packages.ghc96.haskell-language-server
+            haskellPackages.ghc
+            haskellPackages.cabal-install
+            haskellPackages.haskell-language-server
+            pkgs.pkg-config
+            pkgs.zlib
           ];
         };
       }
