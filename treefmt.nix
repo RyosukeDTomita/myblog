@@ -10,6 +10,7 @@
   programs.mdformat = {
     enable = true;
     includes = [ "*.md" ];
+    excludes = [ "posts/*.md" ];
   };
 
   settings.global.excludes = [
