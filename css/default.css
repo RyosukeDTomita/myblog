@@ -1,0 +1,56 @@
+:root {
+  color-scheme: light;
+  font-family: "Iowan Old Style", "Palatino Linotype", Palatino, "URW Palladio L", serif;
+  line-height: 1.6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f8f8f4;
+  color: #202020;
+}
+
+.container {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.site-header {
+  border-bottom: 1px solid #d8d8d0;
+  background: #fcfcf7;
+}
+
+.site-header h1 {
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+.site-header a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.post-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.post-list li {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #e2e2dd;
+  padding: 0.5rem 0;
+  gap: 1rem;
+}
+
+.muted {
+  color: #5f5f5f;
+  font-size: 0.92rem;
+  white-space: nowrap;
+}

@@ -1,0 +1,11 @@
+<section>
+  <h2>Recent posts</h2>
+  <ul class="post-list">
+    $for(posts)$
+      <li>
+        <a href="$url$">$title$</a>
+        <span class="muted">$date$</span>
+      </li>
+    $endfor$
+  </ul>
+</section>
