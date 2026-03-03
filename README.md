@@ -14,7 +14,7 @@
 
 my blog site built with [Haskell](https://www.haskell.org/) library [Hakyll](https://jaspervdj.be/hakyll/).
 
----
+______________________________________________________________________
 
 ## ENVIRONMENT
 
@@ -26,27 +26,30 @@ my blog site built with [Haskell](https://www.haskell.org/) library [Hakyll](htt
   - Ormolu
 - mdformat
 
----
+______________________________________________________________________
 
 ## HOW TO USE
 
 1. Fork this repository.
-2. Go to `Settings` -> `Pages` and set **Source** to `main` branch.
-3. Write articles in `posts/` directory.
 
-    ```markdown
-    ---
-    title: My post
-    date: 2026-03-03
-    ---
+1. Go to `Settings` -> `Pages` and set **Source** to `main` branch.
 
-    Hello, world.
-    ```
+1. Write articles in `posts/` directory.
 
-4. Push to `main` branch and wait for GitHub Actions to build and deploy.
-5. Your blog will be available at `https://<username>.github.io/`.
+   ```markdown
+   ---
+   title: My post
+   date: 2026-03-03
+   ---
 
----
+   Hello, world.
+   ```
+
+1. Push to `main` branch and wait for GitHub Actions to build and deploy.
+
+1. Your blog will be available at `https://<username>.github.io/`.
+
+______________________________________________________________________
 
 ## For Developers
 
@@ -74,4 +77,4 @@ This runs `treefmt` with:
 - `ormolu` for `*.hs`
 - `mdformat` for `*.md`
 
----
+______________________________________________________________________
