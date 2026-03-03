@@ -1,9 +1,18 @@
 <section>
   <h2>Recent posts</h2>
+  <p class="post-tags">Browse by tags: <a href="/tags/">tag search</a></p>
+  $if(tagcloud)$
+    <div class="tag-cloud">$tagcloud$</div>
+  $endif$
   <ul class="post-list">
     $for(posts)$
       <li>
-        <a href="$url$">$title$</a>
+        <div>
+          <a href="$url$">$title$</a>
+          $if(tags)$
+            <div class="post-tags">$tags$</div>
+          $endif$
+        </div>
         <span class="muted">$date$</span>
       </li>
     $endfor$
