@@ -2,7 +2,9 @@
 
 import Hakyll
   ( Context,
+    Tags,
     Identifier,
+    buildTags,
     compile,
     compressCssCompiler,
     constField,
@@ -10,6 +12,8 @@ import Hakyll
     customRoute,
     dateField,
     defaultContext,
+    field,
+    fromCapture,
     getResourceBody,
     hakyll,
     idRoute,
@@ -20,8 +24,11 @@ import Hakyll
     match,
     pandocCompiler,
     recentFirst,
+    renderTagList,
     relativizeUrls,
     route,
+    tagsField,
+    tagsRules,
     templateBodyCompiler,
     toFilePath,
   )
@@ -29,6 +36,8 @@ import System.FilePath (takeBaseName, (</>))
 
 main :: IO ()
 main = hakyll $ do
+  tags <- buildTags "posts/*" (fromCapture "tags/*/index.html")
+
   match "css/*" $ do
     route idRoute
     compile compressCssCompiler
@@ -37,8 +46,8 @@ main = hakyll $ do
     route $ customRoute postRoute
     compile $
       pandocCompiler
-        >>= loadAndApplyTemplate "templates/post.html" postCtx
-        >>= loadAndApplyTemplate "templates/default.html" postCtx
+        >>= loadAndApplyTemplate "templates/post.html" (postCtxWithTags tags)
+        >>= loadAndApplyTemplate "templates/default.html" (postCtxWithTags tags)
         >>= relativizeUrls
 
   create ["index.html"] $ do
@@ -46,12 +55,39 @@ main = hakyll $ do
     compile $ do
       posts <- recentFirst =<< loadAll "posts/*"
       let indexCtx =
-            listField "posts" postCtx (pure posts)
+            listField "posts" (postCtxWithTags tags) (pure posts)
+              <> field "tagcloud" (const $ renderTagList tags)
               <> constField "title" "Home"
               <> defaultContext
       makeItem ("" :: String)
         >>= loadAndApplyTemplate "templates/post-list.html" indexCtx
         >>= loadAndApplyTemplate "templates/default.html" indexCtx
+        >>= relativizeUrls
+
+  tagsRules tags $ \tag pattern -> do
+    let title = "Tag: " <> tag
+    route idRoute
+    compile $ do
+      posts <- recentFirst =<< loadAll pattern
+      let tagCtx =
+            listField "posts" (postCtxWithTags tags) (pure posts)
+              <> constField "title" title
+              <> defaultContext
+      makeItem ("" :: String)
+        >>= loadAndApplyTemplate "templates/post-list.html" tagCtx
+        >>= loadAndApplyTemplate "templates/default.html" tagCtx
+        >>= relativizeUrls
+
+  create ["tags/index.html"] $ do
+    route idRoute
+    compile $ do
+      let tagsCtx =
+            constField "title" "Tag Search"
+              <> field "tagcloud" (const $ renderTagList tags)
+              <> defaultContext
+      makeItem ("" :: String)
+        >>= loadAndApplyTemplate "templates/tags.html" tagsCtx
+        >>= loadAndApplyTemplate "templates/default.html" tagsCtx
         >>= relativizeUrls
 
   match "404.html" $ do
@@ -67,6 +103,11 @@ postCtx :: Context String
 postCtx =
   dateField "date" "%Y-%m-%d"
     <> defaultContext
+
+postCtxWithTags :: Tags -> Context String
+postCtxWithTags tags =
+  tagsField "tags" tags
+    <> postCtx
 
 pageNotFoundCtx :: Context String
 pageNotFoundCtx =
