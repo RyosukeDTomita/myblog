@@ -19,13 +19,29 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
 
       - name: Install Nix
-        uses: cachix/install-nix-action@v31
+        uses: cachix/install-nix-action@19effe9fe722874e6d46dd7182e4b8b7a43c4a99 # v31.10.0
+
+      - name: Cache Stack global packages
+        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
+        with:
+          path: ~/.stack
+          key: stack-global-${{ runner.os }}-${{ hashFiles('stack.yaml', '**/*.cabal') }}
+          restore-keys: |
+            stack-global-${{ runner.os }}-
+
+      - name: Cache Stack local build
+        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
+        with:
+          path: .stack-work
+          key: stack-work-${{ runner.os }}-${{ hashFiles('stack.yaml', '**/*.cabal', 'site.hs') }}
+          restore-keys: |
+            stack-work-${{ runner.os }}-
 
       - name: Configure Pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5.0.0
 
       - name: Build site
         run: |
@@ -33,7 +49,7 @@ jobs:
           nix develop --command stack exec site build
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3.0.1
         with:
           path: _site
 
@@ -46,4 +62,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4.0.5

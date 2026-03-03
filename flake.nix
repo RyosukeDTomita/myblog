@@ -34,6 +34,7 @@
             haskellPackages.haskell-language-server
             pkgs.pkg-config
             pkgs.zlib
+            pkgs.pinact
           ];
         };
       }

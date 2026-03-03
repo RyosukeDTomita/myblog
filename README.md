@@ -8,8 +8,6 @@
 - [ENVIRONMENT](#environment)
 - [HOW TO USE](#how-to-use)
 - [For Developers](#for-developers)
-- [Copyright and Credit](#copyright-and-credit)
-- [Notes](#notes)
 
 ## ABOUT
 
@@ -49,7 +47,7 @@ my blog site built with [Haskell](https://www.haskell.org/) library [Hakyll](htt
 
 ---
 
-## For Developer
+## For Developers
 
 ### Development server on localhost
 
@@ -76,16 +74,3 @@ This runs `treefmt` with:
 - `mdformat` for `*.md`
 
 ---
-
-## Copyright and Credit
-
-This blog is built using [Hakyll](https://jaspervdj.be/hakyll/), a static site generator library written in Haskell.
-
-Copyright (c) 2026 sigma.
-
----
-
-## Notes
-
-- Please keep the Hakyll attribution when reusing this repository template.
-- Make sure your own posts/assets comply with their original licenses before publishing.

@@ -1,0 +1,36 @@
+{
+  "[markdown]": {
+    "editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
+    "editor.formatOnSave": true,
+  },
+  // 抑止設定
+  "markdownlint.config": {
+    "MD010": false, // タブ
+    "MD013": false // 長い行
+  },
+  "[haskell]": {
+    "editor.defaultFormatter": "haskell.haskell",
+    "editor.formatOnSave": true
+  },
+  "haskell.manageHLS": "PATH", // nix
+  "haskell.formattingProvider": "ormolu",
+  "haskell.ghcupExecutablePath": "",
+  "haskell.upgradeGHCup": false,
+  "haskell.serverExecutablePath": "haskell-language-server",
+
+  "github.copilot.enable": {
+    "haskell": false
+  },
+  "cSpell.words": [
+    "foldl",
+    "foldr",
+    "scanl",
+    "zipWith",
+    "unwords",
+    "unlines",
+    "zipWith",
+    "elems",
+    "hakyll",
+    "pandoc"
+  ],
+}
