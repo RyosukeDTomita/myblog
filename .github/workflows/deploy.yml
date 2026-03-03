@@ -24,6 +24,9 @@ jobs:
       - name: Install Nix
         uses: cachix/install-nix-action@19effe9fe722874e6d46dd7182e4b8b7a43c4a99 # v31.10.0
 
+      - name: Use Magic Nix Cache
+        uses: DeterminateSystems/magic-nix-cache-action@v13
+
       - name: Cache Stack global packages
         uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
         with:
@@ -32,21 +35,12 @@ jobs:
           restore-keys: |
             stack-global-${{ runner.os }}-
 
-      - name: Cache Stack local build
-        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
-        with:
-          path: .stack-work
-          key: stack-work-${{ runner.os }}-${{ hashFiles('stack.yaml', '**/*.cabal', 'site.hs') }}
-          restore-keys: |
-            stack-work-${{ runner.os }}-
-
       - name: Configure Pages
         uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5.0.0
 
       - name: Build site
         run: |
-          nix develop --command stack build --no-terminal
-          nix develop --command stack exec site build
+          nix develop --command bash -lc 'stack build --no-terminal && stack exec site build'
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3.0.1
