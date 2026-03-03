@@ -24,9 +24,6 @@ jobs:
       - name: Install Nix
         uses: cachix/install-nix-action@19effe9fe722874e6d46dd7182e4b8b7a43c4a99 # v31.10.0
 
-      - name: Use Magic Nix Cache
-        uses: DeterminateSystems/magic-nix-cache-action@v13
-
       - name: Cache Stack global packages
         uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
         with:
