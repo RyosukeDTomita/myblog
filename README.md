@@ -14,6 +14,9 @@
 
 my blog site built with [Haskell](https://www.haskell.org/) library [Hakyll](https://jaspervdj.be/hakyll/).
 
+Super fast! --> [PageSpeed Insights](https://pagespeed.web.dev/analysis/https-ryosukedtomita-github-io-myblog/z4njqaj3bl?form_factor=desktop)
+
+
 ______________________________________________________________________
 
 ## ENVIRONMENT
