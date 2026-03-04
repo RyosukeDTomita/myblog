@@ -1,8 +1,8 @@
 {
-  description = "Hakyll blog with Nix, Stack, and GitHub Pages";
+  description = "haskell site";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/24.05";
     flake-utils.url = "github:numtide/flake-utils";
     treefmt-nix.url = "github:numtide/treefmt-nix";
   };
@@ -13,30 +13,43 @@
     flake-utils,
     treefmt-nix,
   }:
-    flake-utils.lib.eachDefaultSystem (
-      system:
+    flake-utils.lib.eachDefaultSystem (system:
       let
-        pkgs = import nixpkgs { inherit system; };
-        haskellPackages = pkgs.haskell.packages.ghc967 or pkgs.haskell.packages.ghc96;
+        pkgs = import nixpkgs {
+          inherit system;
+        };
+
+        hpkgs = pkgs.haskell.packages.ghc96;
+        siteBin = hpkgs.callCabal2nix "site" ./. { };
+        site = pkgs.runCommand "myblog-site" {
+          nativeBuildInputs = [ siteBin ];
+          LANG = "C.UTF-8";
+          LC_ALL = "C.UTF-8";
+        } ''
+          cp -r ${self} source
+          chmod -R u+w source
+          cd source
+          site build
+          cp -r _site "$out"
+        '';
         treefmtEval = treefmt-nix.lib.evalModule pkgs ./treefmt.nix;
       in
       {
         formatter = treefmtEval.config.build.wrapper;
 
-        devShells.default = pkgs.mkShell {
-          packages = [
-            pkgs.stack
-            pkgs.treefmt
-            pkgs.ormolu
-            pkgs.python3Packages.mdformat
-            haskellPackages.ghc
-            haskellPackages.cabal-install
-            haskellPackages.haskell-language-server
-            pkgs.pkg-config
-            pkgs.zlib
-            pkgs.pinact
+        packages.site = site;
+        packages.default = site;
+
+        devShells.default = hpkgs.shellFor {
+          packages = p: [ siteBin ];
+
+          buildInputs = [
+            pkgs.cabal-install
+            pkgs.haskell-language-server
+            pkgs.ghcid
           ];
+
+          withHoogle = true;
         };
-      }
-    );
+      });
 }
