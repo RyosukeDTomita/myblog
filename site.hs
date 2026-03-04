@@ -46,7 +46,7 @@ main = hakyll $ do
     route $ customRoute postRoute
     compile $
       pandocCompiler
-        >>= loadAndApplyTemplate "templathttps://avatars.githubusercontent.com/u/50137312?v=4%22es/post.html" (postCtxWithTags tags)
+        >>= loadAndApplyTemplate "template/post.html" (postCtxWithTags tags)
         >>= loadAndApplyTemplate "templates/default.html" (postCtxWithTags tags)
         >>= relativizeUrls
 
