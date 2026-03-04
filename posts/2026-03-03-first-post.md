@@ -1,7 +1,7 @@
 ---
 title: 個人ブログをはじめました
 date: 2026-03-03
-tags: haskell, blog, writing
+tags: haskell, daily
 ---
 
 ## なぜ、個人ブログをはじめたのか?
