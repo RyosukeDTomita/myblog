@@ -22,7 +22,7 @@ ______________________________________________________________________
   - treefmt
 - Haskell
   - Hakyll
-  - Stack
+  - Cabal
   - Ormolu
 - mdformat
 
@@ -59,13 +59,20 @@ ______________________________________________________________________
 ```bash
 cd /home/sigma/myblog
 nix develop
-stack build
-stack exec site watch
+cabal run site -- watch
 ```
 
 Go to [http://127.0.0.1:8000](http://127.0.0.1:8000)
 
-`stack.yaml` is configured to use GHC from `nix develop` (`system-ghc: true`), so Stack does not install its own GHC.
+`site` command may not be on `PATH` in the dev shell, so use `cabal run site -- ...`.
+
+CI/CD builds the static site with `nix build .#site`.
+
+You can build the static site locally with:
+
+```bash
+nix build .#site
+```
 
 ### Formatting
 

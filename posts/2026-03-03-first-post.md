@@ -1,5 +1,5 @@
 ---
-title: 個人ブログをはじめました
+title: なぜ個人ブログを作ったか
 date: 2026-03-03
 tags: haskell, daily
 ---
