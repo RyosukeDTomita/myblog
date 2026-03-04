@@ -2,8 +2,10 @@
 
 import Hakyll
   ( Context,
+    FeedConfiguration (..),
     Identifier,
     Tags,
+    bodyField,
     buildTags,
     compile,
     copyFileCompiler,
@@ -14,6 +16,11 @@ import Hakyll
     dateField,
     defaultContext,
     field,
+    feedAuthorEmail,
+    feedAuthorName,
+    feedDescription,
+    feedRoot,
+    feedTitle,
     fromCapture,
     getResourceBody,
     hakyll,
@@ -21,14 +28,17 @@ import Hakyll
     loadBody,
     listField,
     loadAll,
+    loadAllSnapshots,
     loadAndApplyTemplate,
     makeItem,
     match,
     pandocCompiler,
     recentFirst,
     relativizeUrls,
+    renderRss,
     renderTagList,
     route,
+    saveSnapshot,
     tagsField,
     tagsRules,
     templateBodyCompiler,
@@ -56,9 +66,16 @@ main = hakyll $ do
     route $ customRoute postRoute
     compile $
       pandocCompiler
+        >>= saveSnapshot "content"
         >>= loadAndApplyTemplate "templates/post.html" (postCtxWithTags tags)
         >>= loadAndApplyTemplate "templates/default.html" (postCtxWithTags tags)
         >>= relativizeUrls
+
+  create ["rss.xml"] $ do
+    route idRoute
+    compile $ do
+      posts <- fmap (take 10) . recentFirst =<< loadAllSnapshots "posts/*" "content"
+      renderRss feedConfiguration feedCtx posts
 
   create ["index.html"] $ do
     route idRoute
@@ -136,3 +153,19 @@ pageNotFoundCtx =
 postRoute :: Identifier -> FilePath
 postRoute ident =
   "posts" </> takeBaseName (toFilePath ident) </> "index.html"
+
+feedConfiguration :: FeedConfiguration
+feedConfiguration =
+  FeedConfiguration
+    { feedTitle = "Sigma Secret Base",
+      feedDescription = "Ryosuke D. Tomita's blog",
+      feedAuthorName = "Ryosuke D. Tomita",
+      feedAuthorEmail = "",
+      feedRoot = "https://ryosukedtomita.github.io"
+    }
+
+feedCtx :: Context String
+feedCtx =
+  bodyField "description"
+    <> dateField "date" "%Y-%m-%d"
+    <> defaultContext
