@@ -2,8 +2,8 @@
 
 import Hakyll
   ( Context,
-    Tags,
     Identifier,
+    Tags,
     buildTags,
     compile,
     compressCssCompiler,
@@ -24,8 +24,8 @@ import Hakyll
     match,
     pandocCompiler,
     recentFirst,
-    renderTagList,
     relativizeUrls,
+    renderTagList,
     route,
     tagsField,
     tagsRules,
@@ -46,7 +46,7 @@ main = hakyll $ do
     route $ customRoute postRoute
     compile $
       pandocCompiler
-        >>= loadAndApplyTemplate "templates/post.html" (postCtxWithTags tags)
+        >>= loadAndApplyTemplate "templathttps://avatars.githubusercontent.com/u/50137312?v=4%22es/post.html" (postCtxWithTags tags)
         >>= loadAndApplyTemplate "templates/default.html" (postCtxWithTags tags)
         >>= relativizeUrls
 
@@ -64,11 +64,11 @@ main = hakyll $ do
         >>= loadAndApplyTemplate "templates/default.html" indexCtx
         >>= relativizeUrls
 
-  tagsRules tags $ \tag pattern -> do
+  tagsRules tags $ \tag postsPattern -> do
     let title = "Tag: " <> tag
     route idRoute
     compile $ do
-      posts <- recentFirst =<< loadAll pattern
+      posts <- recentFirst =<< loadAll postsPattern
       let tagCtx =
             listField "posts" (postCtxWithTags tags) (pure posts)
               <> constField "title" title
