@@ -18,6 +18,7 @@ import Hakyll
     getResourceBody,
     hakyll,
     idRoute,
+    loadBody,
     listField,
     loadAll,
     loadAndApplyTemplate,
@@ -67,6 +68,7 @@ main = hakyll $ do
             listField "posts" (postCtxWithTags tags) (pure posts)
               <> field "tagcloud" (const $ renderTagList tags)
               <> constField "title" "Home"
+              <> inlineCssField
               <> defaultContext
       makeItem ("" :: String)
         >>= loadAndApplyTemplate "templates/post-list.html" indexCtx
@@ -81,6 +83,7 @@ main = hakyll $ do
       let tagCtx =
             listField "posts" (postCtxWithTags tags) (pure posts)
               <> constField "title" title
+              <> inlineCssField
               <> defaultContext
       makeItem ("" :: String)
         >>= loadAndApplyTemplate "templates/post-list.html" tagCtx
@@ -93,6 +96,7 @@ main = hakyll $ do
       let tagsCtx =
             constField "title" "Tag Search"
               <> field "tagcloud" (const $ renderTagList tags)
+              <> inlineCssField
               <> defaultContext
       makeItem ("" :: String)
         >>= loadAndApplyTemplate "templates/tags.html" tagsCtx
@@ -110,8 +114,13 @@ main = hakyll $ do
 
 postCtx :: Context String
 postCtx =
-  dateField "date" "%Y-%m-%d"
+  inlineCssField
+    <> dateField "date" "%Y-%m-%d"
     <> defaultContext
+
+inlineCssField :: Context String
+inlineCssField =
+  field "inlineCss" (const $ loadBody "css/default.css")
 
 postCtxWithTags :: Tags -> Context String
 postCtxWithTags tags =
@@ -120,7 +129,8 @@ postCtxWithTags tags =
 
 pageNotFoundCtx :: Context String
 pageNotFoundCtx =
-  constField "title" "Page not found"
+  inlineCssField
+    <> constField "title" "Page not found"
     <> defaultContext
 
 postRoute :: Identifier -> FilePath
