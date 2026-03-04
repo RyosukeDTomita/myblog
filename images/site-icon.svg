@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 72 72" role="img" aria-label="Sigma Secret Base icon">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1b202b" />
+      <stop offset="100%" stop-color="#3a4252" />
+    </linearGradient>
+  </defs>
+  <circle cx="36" cy="36" r="35" fill="url(#bg)" stroke="#7bb7ff" stroke-width="2" />
+  <text x="50%" y="54%" text-anchor="middle" fill="#f2f5fb" font-size="24" font-family="Palatino, serif">S</text>
+</svg>
