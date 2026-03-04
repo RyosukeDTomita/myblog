@@ -6,6 +6,7 @@ import Hakyll
     Tags,
     buildTags,
     compile,
+    copyFileCompiler,
     compressCssCompiler,
     constField,
     create,
@@ -41,6 +42,14 @@ main = hakyll $ do
   match "css/*" $ do
     route idRoute
     compile compressCssCompiler
+
+  match "images/*" $ do
+    route idRoute
+    compile copyFileCompiler
+
+  match "js/*" $ do
+    route idRoute
+    compile copyFileCompiler
 
   match "posts/*" $ do
     route $ customRoute postRoute

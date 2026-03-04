@@ -4,12 +4,22 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>$title$</title>
-    <link rel="stylesheet" href="/css/default.css" />
+    <link rel="preload" href="/css/default.css" as="style" />
+    <link rel="stylesheet" href="/css/default.css" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="/css/default.css" /></noscript>
   </head>
   <body>
     <header class="site-header">
       <div class="container site-brand">
-        <img class="site-icon" src="https://avatars.githubusercontent.com/u/50137312?v=4" alt="site icon" />
+        <img
+          class="site-icon"
+          src="/images/site-icon.svg"
+          alt="site icon"
+          width="36"
+          height="36"
+          decoding="async"
+          fetchpriority="high"
+        />
         <h1><a href="/" title="ホームに戻る">Sigma Secret Base</a></h1>
       </div>
     </header>
