@@ -29,7 +29,7 @@ tags: programming, tech
   - ifとcaseは必要に応じて使用する (優先度低)
     - case式: doブロックや`where`、`let`などの式の中で分岐したい時
     - if式: インラインでの簡単な条件分岐
-
+- ポイントフリースタイルはなるべく使わない。
 - 競技プログラミングの場合、入出力は`interact`または、`ByteString.interact`を使用する。
 - 自前の再帰関数よりも、`foldr`、`foldl'`、`mapAccumL`を優先する。
 

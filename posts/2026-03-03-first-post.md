@@ -32,7 +32,7 @@ tags: haskell, daily
 
 ### 3. Haskellで競技プログラミング以外のことをやってみたかったから
 
-自分は2026年10月から純粋関数型言語である[Haskell](https://www.haskell.org/)を学びはじめ、毎週[AtCoder](https://atcoder.jp/)のコンテストに参加しています。
+自分は2025年10月から純粋関数型言語である[Haskell](https://www.haskell.org/)を学びはじめ、毎週[AtCoder](https://atcoder.jp/)のコンテストに参加しています。
 Haskellの魅力をもっと知るために、競技プログラミング以外のこともやってみたいと思い、ブログを作ることにしました。
 
 このサイトはHaskellのlibraryである[Hakyll](https://jaspervdj.be/hakyll/)を使って、このブログを作成しています。
