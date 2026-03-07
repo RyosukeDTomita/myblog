@@ -178,6 +178,7 @@ tags: daily, book
 - [アマテラスの暗号](https://amzn.asia/d/2QmlMUq)
 - [秒速5センチメートル](https://amzn.asia/d/4ogQYIu)
 - [サーキット・スイッチャー](https://amzn.asia/d/0eVCu09H)
+- [赤いオーロラの街で](https://amzn.asia/d/0eHPNOKl)
 
 ---
 
