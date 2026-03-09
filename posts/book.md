@@ -1,6 +1,6 @@
 ---
 title: "読んだ本リスト"
-date: 2026-03-04
+date: 2026-03-09
 tags: daily, book
 ---
 
@@ -139,6 +139,7 @@ tags: daily, book
 - [アルゴリズム図鑑 絵で見てわかる26のアルゴリズム](https://amzn.asia/d/bBpoeN3)
 - [人が増えても速くならない ～変化を抱擁せよ～](https://amzn.asia/d/8fKiU8j)
 - [Googleのソフトウェアエンジニアリング ―持続可能なプログラミングを支える技術、文化、プロセス](https://www.oreilly.co.jp/books/9784873119656/) WIP
+- [ハッカーと画家](https://www.ohmsha.co.jp/book/9784274065972/) WIP
 
 ---
 
