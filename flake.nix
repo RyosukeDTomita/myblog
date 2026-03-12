@@ -47,6 +47,7 @@
             pkgs.cabal-install
             pkgs.haskell-language-server
             pkgs.ghcid
+            pkgs.pinact
           ];
 
           withHoogle = true;
