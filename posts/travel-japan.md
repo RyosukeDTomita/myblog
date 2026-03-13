@@ -1,7 +1,7 @@
 ---
 title: "行ったことある県"
 date: 2026-03-12
-tags: travel
+tags: travel, japan
 ---
 
 35/47
