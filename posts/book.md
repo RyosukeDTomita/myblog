@@ -194,6 +194,7 @@ tags: daily, book
 - [コンサル1年目が学ぶこと](https://amzn.asia/d/aMHSH6C)
 - [図解でわかる!理工系のためのよい文章の書き方](https://www.shoeisha.co.jp/book/detail/9784798186771)
 - [すぐ動けない人のための時間割仕事術](https://publications.asahi.com/product/22678.html)
+- [仕事を人生の目的にするな](https://amzn.asia/d/00tRjyPX)
 
 ---
 
