@@ -6,10 +6,10 @@ tags: daily, book
 
 ## 読んだ本リストの記載方針
 
-- 紙/電子は問わないが，研修のテキスト等は除く
-- 期間: プログラミングを始めた2018年〜2025年10月24日まで(随時更新)
-- 技術書以外のもので印象に残っているものや役に立ったと思うものは一部記載することにした。
-- WIPマークについて: 現在進行系で読んでいるものかつ、該当の本から学んだことを活かせているものに付与する(完全な積読にはWIPすらつけず、このリストには載せない)
+- 紙/電子は問わないが，一般に公開されていないもの(研修のテキスト等)は記載しない。
+- 期間: プログラミングを始めた2018年〜現在。
+- 技術書を中心に記載していたが、他ジャンルでも印象に残っている本は記載する。
+- WIPマークについて: 現在進行系で読んでいるものかつ、該当の本から学んだことを活かせているものに付与する(完全な積読にはWIPマークはつけず、このリストに載せない)
 
 ---
 
@@ -17,11 +17,11 @@ tags: daily, book
 
 ### Linux系
 
-- [新しいLinuxの教科書](https://www.sbcr.jp/product/4797380941/)
-- [Ubuntu サーバ徹底構築](https://www.kinokuniya.co.jp/f/dsg-08-EK-0674653)
-- [「シェル芸」に効く！AWK処方箋](https://www.shoeisha.co.jp/book/detail/9784798150901)
-- [難読化シェル芸の世界　Bashとすてきな難読化](https://book.mynavi.jp/manatee/detail/id=103808)
-- [実践bashによるサイバーセキュリティ対策](https://www.oreilly.co.jp//books/9784873119052/)
+- [新しいLinuxの教科書](https://www.sbcr.jp/product/4797380941/): 人生で最初に読んだ技術書(2018年)。IT系に来たのも現在もプライベートでUbuntuを使っているのもこの本がきっかけ。
+- [Ubuntu サーバ徹底構築](https://www.kinokuniya.co.jp/f/dsg-08-EK-0674653): 2019年ごろにサーバとは何か知りたくて読んだ。ラズパイサーバを作り、友人のYouTuberのエゴサ及び、いいねを自動化するのに役に立った。
+- [「シェル芸」に効く！AWK処方箋](https://www.shoeisha.co.jp/book/detail/9784798150901): 社会人1年目の2022年に配属された部署でシェル芸を使う場面があったのでこれを機に`awk`を極めるため読んだ。既存のログ集計スクリプトをawkを使って効率化したが、手順変更が面倒だとマージされることはなかった。
+- [難読化シェル芸の世界　Bashとすてきな難読化](https://book.mynavi.jp/manatee/detail/id=103808): 同じく社会人1年目の2022年にシェル芸を極めるため読んだ。難読化というジャンルに初めて出会えて良かった。
+- [実践bashによるサイバーセキュリティ対策](https://www.oreilly.co.jp//books/9784873119052/): 2020年にかなり時間をかけて読み切った。自分がセキュリティエンジニアとして就職できた(した)のは、この本を通してセキュリティのコンテキストをある程度習得できたからだと思っている。
 
 ---
 
@@ -29,78 +29,80 @@ tags: daily, book
 
 #### C
 
-- [苦しんで覚えるC言語](https://9cguide.appspot.com/index.html)
+- [苦しんで覚えるC言語](https://9cguide.appspot.com/index.html): 2020年に大学院の授業でC言語を選択したので、C言語にキャッチアップするために読んだ。
 
 #### Python
 
-- [スマートPythonプログラミング: Pythonのより良い書き方を学ぶ](https://amzn.asia/d/hFav4vb)
-- [PythonユーザのためのJupyter実践入門](https://amzn.asia/d/gxMJdEc)
-- [Djanoのツボとコツが絶対にわかる本](https://www.shuwasystem.co.jp/book/9784798073927.html)
-- [Pythonで学ぶアルゴリズムの教科書 一生モノの知識と技術を身につける](https://amzn.asia/d/8GEft5V)
-- [O'Reilly PythonによるWebスクレイピング 第2版](https://www.oreilly.co.jp/books/9784873118710/)
-- [Pythonではじめるアルゴリズム入門 伝統的なアルゴリズムで学ぶ定石と計算量](https://amzn.asia/d/0GNizT2)
-- [O'Reilly 初めてのPython 第3版](https://www.oreilly.co.jp/books/9784873113937/)
-- [スクレイピング・ハッキング・ラボ Pythonで自動化する未来型生活](https://amzn.asia/d/eCD8OBQ)
-- [Pythonをおぼえた人がGUIアプリケーション開発するためのtkinter速習入門: 標準ライブラリでGUI作成](https://amzn.asia/d/81jg49i)
+- [スマートPythonプログラミング: Pythonのより良い書き方を学ぶ](https://amzn.asia/d/hFav4vb): 2021年に読み、これまで存在すらしらなかったFormatterやLinter、パッケージ作成、コーディング規約等の基本的な概念を知ることができた。
+- [PythonユーザのためのJupyter実践入門](https://amzn.asia/d/gxMJdEc): 2018年に大学院見学に来た際に、研究で使うPython本のおすすめとして紹介してもらった本。卒業研究で使った図はすべてPythonのMatplotLibで作成できたのはこの本のおかげ。
+- [Djanoのツボとコツが絶対にわかる本](https://www.shuwasystem.co.jp/book/9784798073927.html): 2022年3月に大学院卒業間近に読んだ。Pythonで簡単なWebアプリを作る方法を学べてよかった。
+- [Pythonで学ぶアルゴリズムの教科書 一生モノの知識と技術を身につける](https://amzn.asia/d/8GEft5V): 2021年頃にPaizaをきっかけにアルゴリズムに興味を持ったので研究の合間に写経して学んだ。
+- [Pythonではじめるアルゴリズム入門 伝統的なアルゴリズムで学ぶ定石と計算量](https://amzn.asia/d/0GNizT2): 2021年頃にPaizaをきっかけにアルゴリズムに興味を持ったので研究の合間に写経して学んだ。
+
+- [O'Reilly 初めてのPython 第3版](https://www.oreilly.co.jp/books/9784873113937/): 2020年ごろに研究の道具してではなく、プログラミング言語としてのPythonに向き合いたいと思い、読んだ。
+- [O'Reilly PythonによるWebスクレイピング 第2版](https://www.oreilly.co.jp/books/9784873118710/): 2021年頃に研究で気象庁のデータを使いたかったが、当時まとまったデータを取得するための手作業を嫌ってWebスクレイピングを学ぶために読んだ。
+- [スクレイピング・ハッキング・ラボ Pythonで自動化する未来型生活](https://amzn.asia/d/eCD8OBQ): 2021年ごろにさらにWebスクレイピングについて知りたいと思い、読んだ。より実践的なアプローチや手法が学べて良かった。
+- [Pythonをおぼえた人がGUIアプリケーション開発するためのtkinter速習入門: 標準ライブラリでGUI作成](https://amzn.asia/d/81jg49i): 2021年に2週間の調査船での気象観測を実施していた際に俺はすでに研究しているから暇な時間は好きな勉強してもええやろみたいな理論で読んだ。
 
 #### Java
 
-- [スッキリわかるJava入門 第3版](https://book.impress.co.jp/books/1119101083)
-- [スッキリわかるJava入門 実践編 第3版](https://book.impress.co.jp/books/1119101169)
-- [スッキリわかるサーブレット & JSP入門 第3版](https://book.impress.co.jp/books/1122101114)
-- [Javaビルドツール入門 Maven/Gradle/SBT/Bazel対応](https://amzn.asia/d/81ejQFX)
-- [Effective java 第3版](https://www.maruzen-publishing.co.jp/book/b10120506.html) WIP
-- [Javaのラムダ式をさらりと理解するための解説書](https://amzn.asia/d/gJcBouW)
-- [独習JSP＆サーブレット 第3版](https://www.shoeisha.co.jp/book/detail/9784798167053)
+- [スッキリわかるJava入門 第3版](https://book.impress.co.jp/books/1119101083): 社会人1年目の2022年に研修用として配布されて読んだ。オブジェクト指向はこれで学んだ。
+- [スッキリわかるJava入門 実践編 第3版](https://book.impress.co.jp/books/1119101169): 同上
+- [スッキリわかるサーブレット & JSP入門 第3版](https://book.impress.co.jp/books/1122101114): 社会人1年目の研修用で配布された。JSPとMVCについて知れた。
+- [独習JSP＆サーブレット 第3版](https://www.shoeisha.co.jp/book/detail/9784798167053): 研修を受けてJSPについてもっと知りたいと思い読んだ。
+- [Javaビルドツール入門 Maven/Gradle/SBT/Bazel対応](https://amzn.asia/d/81ejQFX): 研修でJavaのビルドツールについて学べなかったのでMavenについて学ぶ目的で読んだ。
+- [Effective java 第3版](https://www.maruzen-publishing.co.jp/book/b10120506.html)WIP: 2022年に購入するも4ヶ月くらいかけて半分読み断念。2025年くらいに開くと割と読めるようになっており、最近ちまちま読んでいる。
+- [Javaのラムダ式をさらりと理解するための解説書](https://amzn.asia/d/gJcBouW): 2022年にEffective Javaを読んだがLambda式がいまいち理解できなかったため、読んだ。
 
 #### Java Script系
 
-- [JavaScript 初級者が知るべき39のこと](https://amzn.asia/d/3idmaqF)
+- [JavaScript 初級者が知るべき39のこと](https://amzn.asia/d/3idmaqF): 2023年くらいにReactを触る前にJSの基礎本枠で読んだ。
 - [Effective TypeScript 第2版 ―型システムの力を最大限に引き出す83項目](https://www.oreilly.co.jp/books/9784814401093/) WIP
-- [O'Reilly Node.jsデザインパターン 第2版](https://www.oreilly.co.jp/books/9784873118734/)
+- [O'Reilly Node.jsデザインパターン 第2版](https://www.oreilly.co.jp/books/9784873118734/) WIP
 
 #### Ruby
 
-- [プロを目指す人のためのRuby 入門 第2版](https://gihyo.jp/dp/ebook/2021/978-4-297-12438-0)
+- [プロを目指す人のためのRuby 入門 第2版](https://gihyo.jp/dp/ebook/2021/978-4-297-12438-0): 2023年にRubyってどんなプログラミング言語か知りたくて読んだ。
 
 ---
 
 ### 設計/リファクタリング/テスト
 
-- [Tidy First?](https://www.oreilly.co.jp/books/9784814400911/)
-- [リーダブルコード](https://www.oreilly.co.jp/books/9784873115658/)
-- [良いコードを書く技術](https://gihyo.jp/book/2021/978-4-297-12048-1)
-- [テスト駆動開発](https://shop.ohmsha.co.jp/shopdetail/000000004967/)
-- [単体テストの考え方/使い方](https://book.mynavi.jp/ec/products/detail/id=134252)
-- [プログラマー脳](https://www.shuwasystem.co.jp/book/9784798068534.html)
-- [プリンシパルオブプログラミング](https://www.shuwasystem.co.jp/book/9784798046143.html)
+- [Tidy First?](https://www.oreilly.co.jp/books/9784814400911/): 2024年に海外旅行中の飛行機で読んだ。実は最初に読んだKent Beckの本。
+- [リーダブルコード](https://www.oreilly.co.jp/books/9784873115658/): 2019年くらいに大学の生協で立ち読みした。
+- [良いコードを書く技術](https://gihyo.jp/book/2021/978-4-297-12048-1): 2022年くらいに読んだ記憶。
+- [テスト駆動開発](https://shop.ohmsha.co.jp/shopdetail/000000004967/): 2024年にテストコードが残っていない案件に入った際に、自分はテストを書こうと思い、原典である本書を読んだ。2025年にKent Beck氏の来日に合わせて洋書版も書い、一緒に写真を取ってもらったのはいい思い出。
+- [単体テストの考え方/使い方](https://book.mynavi.jp/ec/products/detail/id=134252): TDDについて知ったが、良いテストって何だ?と思っていたところをサポーターズのイベントでこの本いいよと勧めてもらい読んだ。関数型言語に興味を持つきっかけにもなった。
+- [プログラマー脳](https://www.shuwasystem.co.jp/book/9784798068534.html): 2022年に現在の妻からjnitoさんにとりあえず読むように言われた本だと聞いたので自分も読んだ。これまで他人が書いたコードに対する抵抗感があった理由がわかり、納得した。
+- [プリンシパルオブプログラミング](https://www.shuwasystem.co.jp/book/9784798046143.html): 社会人3年目までに知っておきたい内容とどこかに書いてあったので2024年に滑り込みで読んだ。
 - [Java言語で学ぶデザインパターン入門 第3版](https://www.hyuki.com/dp/) WIP
 - [良いコード／悪いコードで学ぶ設計入門 ―保守しやすい 成長し続けるコードの書き方](https://gihyo.jp/book/2025/978-4-297-14622-1) WIP
-- [関数プログラミング実践入門](https://gihyo.jp/book/2016/978-4-7741-8390-9)
+- [関数プログラミング実践入門](https://gihyo.jp/book/2016/978-4-7741-8390-9): 関数型言語であるHaskellをいじりたくなったので読んだ。Haskell入門書というだけでなく、関数型言語とはなにかを知るのに役に立った。
+- [Haskellで戦う競技プログラミング](https://lab.miz-ar.info/kyopro-haskell/) WIP 最後の章のDPの部分だけ読めていない。
 
 ---
 
 ### ネットワーク
 
-- [Linuxで動かしながら学ぶTCP/IPネットワーク入門](https://amzn.asia/d/83UaWlD)
-- [マスタリングTCP/IP 入門編 第5版](https://amzn.asia/d/1a5VhXr)
-- [パケットキャプチャの教科書](https://www.sbcr.jp/product/4797390711/)
-- [ストーリーで学ぶ ネットワークの基本](https://book.impress.co.jp/books/1118101083)
-- [DNSがよくわかる教科書](https://www.sbcr.jp/product/4797394481/)
+- [Linuxで動かしながら学ぶTCP/IPネットワーク入門](https://amzn.asia/d/83UaWlD): 2022年に新人ネットワーク研修の予習用にやった。
+- [マスタリングTCP/IP 入門編 第5版](https://amzn.asia/d/1a5VhXr): 2019年に古本屋で見つけて購入。自分がネット上で集めたネットワークの基礎が集まっていると思い感動した記憶。
+- [パケットキャプチャの教科書](https://www.sbcr.jp/product/4797390711/): 新人のころWireSharkを使う部署にいたので読んだ。WireSharkは高機能で良い。
+- [ストーリーで学ぶ ネットワークの基本](https://book.impress.co.jp/books/1118101083): 2019年ごろに安売りしていたので買ったが読まず、2022年に読んだ。
+- [DNSがよくわかる教科書](https://www.sbcr.jp/product/4797394481/): 2022年にDNSがよくわからなかったので読んだ。
 
 ---
 
 ### セキュリティ
 
-- [雰囲気でOAuth2.0を使っているエンジニアがOAuth2.0を整理して、手を動かしながら学べる本](https://authya.booth.pm/items/1296585)
-- [OAuth、OAuth認証、OpenID Connectの違いを整理して理解できる本 [2024年改訂版]](https://authya.booth.pm/items/1550861)
-- [ハッキング・ラボのつくりかた 仮想環境におけるハッカー体験学習](https://www.seshop.com/product/detail/21674)
-- [伝説のハッカーが教える　超監視社会で身をまもる方法](https://www.kinokuniya.co.jp/f/dsg-01-9784822285500)
-- [3分ハッキング サイバー攻撃から見を守る知識](https://kanki-pub.co.jp/pub/book/9784761275037/)
-- [2022 情報処理安全確保支援士「専門知識+午後問題」の重点対策 (重点対策シリーズ)](https://amzn.asia/d/16Sr7ZX)
-- [CVSSによるセキュリティ脆弱性評価: イマドキの脆弱性対策とは?](https://amzn.asia/d/5yxy95s)
-- [サイバー戦争は公開情報のみでここまで戦える](https://amzn.asia/d/9JA6QvQ)
-- [ハッカー外伝1](https://amzn.asia/d/gJkDwBC)
+- [雰囲気でOAuth2.0を使っているエンジニアがOAuth2.0を整理して、手を動かしながら学べる本](https://authya.booth.pm/items/1296585): 2024年頃にそろそろOAuth、OIDCの理解度浅かったので入門書として読んだ。
+- [OAuth、OAuth認証、OpenID Connectの違いを整理して理解できる本 [2024年改訂版]](https://authya.booth.pm/items/1550861): 同上
+- [ハッキング・ラボのつくりかた 仮想環境におけるハッカー体験学習](https://www.seshop.com/product/detail/21674): 2019年ごろに買って読んだ。2022年にIPSIRON先生のサインも頂いた。
+- [伝説のハッカーが教える　超監視社会で身をまもる方法](https://www.kinokuniya.co.jp/f/dsg-01-9784822285500): 2019年ごろに読み、書いてあることは一通り試した。
+- [3分ハッキング サイバー攻撃から見を守る知識](https://kanki-pub.co.jp/pub/book/9784761275037/): 2019年ごろに読んだ。知らないツールが紹介されていたのでありがたかった。
+- [2022 情報処理安全確保支援士「専門知識+午後問題」の重点対策 (重点対策シリーズ)](https://amzn.asia/d/16Sr7ZX): 2022年にセキスペ対策で購入。
+- [CVSSによるセキュリティ脆弱性評価: イマドキの脆弱性対策とは?](https://amzn.asia/d/5yxy95s): 2023年にCVSSについて知らんなと思い、読んだ。
+- [サイバー戦争は公開情報のみでここまで戦える](https://amzn.asia/d/9JA6QvQ): 2019年頃に読んだ記憶。
+- [ハッカー外伝1](https://amzn.asia/d/gJkDwBC): 2019年ごろに読んだ記憶。2はいつ出るんだろうか。
 
 ---
 
@@ -108,10 +110,10 @@ tags: daily, book
 
 #### AWS
 
-- [AWS認定資格試験テキスト　AWS認定 クラウドプラクティショナー　改訂第2版](https://amzn.asia/d/dS7HZtK)
-- [AWS認定資格試験テキスト AWS認定ソリューションアーキテクト - アソシエイト 改訂第2版](https://amzn.asia/d/0gEEroV)
-- [AWS認定資格試験テキスト AWS認定SysOpsアドミニストレーター - アソシエイト AWS認定資格試験テキスト](https://amzn.asia/d/1n10e2N)
-- [AWSコンテナ設計・構築本格入門](https://amzn.asia/d/gXmB4lw)
+- [AWS認定資格試験テキスト　AWS認定 クラウドプラクティショナー　改訂第2版](https://amzn.asia/d/dS7HZtK): 2023年ごろにAWS資格勉強のため読んだ。
+- [AWS認定資格試験テキスト AWS認定ソリューションアーキテクト - アソシエイト 改訂第2版](https://amzn.asia/d/0gEEroV): 同上
+- [AWS認定資格試験テキスト AWS認定SysOpsアドミニストレーター - アソシエイト AWS認定資格試験テキスト](https://amzn.asia/d/1n10e2N): 同上
+- [AWSコンテナ設計・構築本格入門](https://amzn.asia/d/gXmB4lw): 2023年ごろにECSとか使いたくて買ってみた。
 
 ---
 
@@ -119,25 +121,25 @@ tags: daily, book
 
 #### 生成AI
 
-- [生成AIで世界はこう変わる](https://www.sbcr.jp/product/4815622978/)
-- [LangChain完全入門](https://book.impress.co.jp/books/1123101047)
+- [生成AIで世界はこう変わる](https://www.sbcr.jp/product/4815622978/): 2023年ごろに読み物として読んだ。
+- [LangChain完全入門](https://book.impress.co.jp/books/1123101047): 2023年ごろに読んだ。LangChainでRAGを作りたかったが、うまく動かなかったので助かった。
 
 #### 機械学習
 
-- [高校数学からはじめるディープラーニング　初歩からわかる人工知能が働くしくみ](https://www.kodansha.co.jp/book/products/0000341346)
+- [高校数学からはじめるディープラーニング　初歩からわかる人工知能が働くしくみ](https://www.kodansha.co.jp/book/products/0000341346): 2024年にセブ島のビーチで読んだ。
 
 ---
 
 ### エンジニア的思考方法
 
-- [アジャイルなチームをつくる ふりかえりガイドブック 始め方・ふりかえりの型・手法・マインドセット](https://www.shoeisha.co.jp/book/detail/9784798168791)
-- [世界一流エンジニアの思考法](https://www.kinokuniya.co.jp/f/dsg-01-9784163917689)
-- [エッセンシャル思考 最小の時間で成果を最大にする](https://www.kinokuniya.co.jp/f/dsg-01-9784761270438)
-- [エンジニアが一生困らない ドキュメント作成の基本](https://www.socym.co.jp/book/post-19000) WIP
-- [リファクタリング・ウェットウェア](https://www.oreilly.co.jp/books/9784873114033/)
-- [コンピュータはなぜ動くのか〜知っておきたいハードウェア&ソフトウェアの基礎知識](https://amzn.asia/d/c0OB5JQ)
-- [アルゴリズム図鑑 絵で見てわかる26のアルゴリズム](https://amzn.asia/d/bBpoeN3)
-- [人が増えても速くならない ～変化を抱擁せよ～](https://amzn.asia/d/8fKiU8j)
+- [アジャイルなチームをつくる ふりかえりガイドブック 始め方・ふりかえりの型・手法・マインドセット](https://www.shoeisha.co.jp/book/detail/9784798168791): 2022年に著者が研修講師として来たので買って読んだ。
+- [世界一流エンジニアの思考法](https://www.kinokuniya.co.jp/f/dsg-01-9784163917689): 2023年に読んだ。仕事の仕方にも影響を与えた良本。
+- [エッセンシャル思考 最小の時間で成果を最大にする](https://www.kinokuniya.co.jp/f/dsg-01-9784761270438): 2024年に結婚してから自分が発散気味だなということに気がついたので読んだ。2025年の育休中にも改めて読み直した。
+- [エンジニアが一生困らない ドキュメント作成の基本](https://www.socym.co.jp/book/post-19000) WIP(途中であきた)
+- [リファクタリング・ウェットウェア](https://www.oreilly.co.jp/books/9784873114033/): 2024年にセブ島のビーチで読んだ。
+- [コンピュータはなぜ動くのか〜知っておきたいハードウェア&ソフトウェアの基礎知識](https://amzn.asia/d/c0OB5JQ): 2020年に読んだ。
+- [アルゴリズム図鑑 絵で見てわかる26のアルゴリズム](https://amzn.asia/d/bBpoeN3): 2020年ごろに読んだ。
+- [人が増えても速くならない ～変化を抱擁せよ～](https://amzn.asia/d/8fKiU8j): 2023年に読んだ。平易な言葉でアジャイルの必要性を説明しており、良かった。
 - [Googleのソフトウェアエンジニアリング ―持続可能なプログラミングを支える技術、文化、プロセス](https://www.oreilly.co.jp/books/9784873119656/) WIP
 - [ハッカーと画家](https://www.ohmsha.co.jp/book/9784274065972/) WIP
 
@@ -147,77 +149,78 @@ tags: daily, book
 
 #### コンテナ
 
-- [開発系エンジニアのためのDocker絵とき入門 （単行本）](https://www.shuwasystem.co.jp/book/9784798071503.html)
-- [理想のコンテナイメージを作る Software Design 2023年11月号](https://gihyo.jp/magazine/SD/archive/2023/202311)
+- [開発系エンジニアのためのDocker絵とき入門 （単行本）](https://www.shuwasystem.co.jp/book/9784798071503.html): 2024年ごろにイベントで著者であるほげさんに頂いた。サイン入り。
+- [理想のコンテナイメージを作る Software Design 2023年11月号](https://gihyo.jp/magazine/SD/archive/2023/202311): Dockerにつられて買った。Dockerのテクニックを何も知らなかったので大変ためになった。
 
 #### エディタ
 
-- [VS Code Dev Container Guidebook](https://techbookfest.org/product/4696850535809024?productVariantID=5428870601768960)
+- [VS Code Dev Container Guidebook](https://techbookfest.org/product/4696850535809024?productVariantID=5428870601768960): 同期におすすめしてもらい読んだ。自分が一時期Dev Containersに凝っていたのはこの本がきっかけ。
+- [実践Vim: 思考のスピードで編集しよう!](https://tatsu-zine.com/books/practical-vim): 2018年にタッチタイピングを覚えたのでようやくVimが使えるなと思い読んだ。もともと卒業した博士課程の先輩が残していった本だったが気に入ったのでメールしてもらっていいか聞いてもらった。
+- [Visual Studio Code完全入門 Webクリエイター&エンジニアの作業がはかどる新世代エディターの操り方](https://book.impress.co.jp/books/1121101051): 2022年頃にVimの環境構築で消費していたのでVS Codeも試すかと思い読んだ。
 
-- [実践Vim: 思考のスピードで編集しよう!](https://tatsu-zine.com/books/practical-vim)
-- [Visual Studio Code完全入門 Webクリエイター&エンジニアの作業がはかどる新世代エディターの操り方](https://book.impress.co.jp/books/1121101051)
 
 #### GitHub
 
-- [GitHub実践入門 Pull Requestによる開発の変革](https://gihyo.jp/book/2014/978-4-7741-6366-6)
+- [GitHub実践入門 Pull Requestによる開発の変革](https://gihyo.jp/book/2014/978-4-7741-6366-6): 2019年にGitHubのアカウントを作ったが、使い方がわからなかったので読んだ。
 
 ---
 
 ## 小説(一部)
 
-- [雪国](https://amzn.asia/d/a83GIVa)
-- [1984年 ジョージ・オーウェル](https://amzn.asia/d/cf7QukL)
-- [ライ麦畑でつかまえて J.D.サリンジャー](https://amzn.asia/d/1muhROA)
-- [ダヴィンチ・コード](https://amzn.asia/d/3lKloFy)
-- [アルゴリズムの乙女たち](https://www.tokuma.jp/book/b642639.html)
-- [成瀬は天下を取りにいく](https://amzn.asia/d/edZIuQf)
-- [四畳半神話大系 森見登美彦](https://amzn.asia/d/hCaldY5)
-- [太陽の塔 森見登美彦](https://amzn.asia/d/hCaldY5)
-- [有頂天家族](https://amzn.asia/d/443iKti)
-- [人工知能の見る夢は](https://amzn.asia/d/4YcivT8)
-- [喜嶋先生の静かな世界](https://amzn.asia/d/3gpqo6k)
-- [アマテラスの暗号](https://amzn.asia/d/2QmlMUq)
-- [秒速5センチメートル](https://amzn.asia/d/4ogQYIu)
-- [サーキット・スイッチャー](https://amzn.asia/d/0eVCu09H)
-- [赤いオーロラの街で](https://amzn.asia/d/0eHPNOKl)
+- [雪国](https://amzn.asia/d/a83GIVa): 2024年に星を見に石川に旅行にいったが大雪になって悔しかったのでホテルの前の暖炉で読んだ。
+- [1984年 ジョージ・オーウェル](https://amzn.asia/d/cf7QukL): 攻殻機動隊で引用されていたので読んだ。ディストピアの解像度が高くて驚いた。
+- [ライ麦畑でつかまえて J.D.サリンジャー](https://amzn.asia/d/1muhROA): 攻殻機動隊で引用されていたので読んだ。自分の子供自体の感覚を思い出した。
+- [アマテラスの暗号](https://amzn.asia/d/2QmlMUq): 2022年頃に読んだ。影響を受けて、いくつかの神社に参拝した。
+- [ダヴィンチ・コード](https://amzn.asia/d/3lKloFy): アマテラスの暗号が日本版ダヴィン・チコードと言われていたので読んだ。宗教と歴史に興味を持ったきっかけ。
+- [アルゴリズムの乙女たち](https://www.tokuma.jp/book/b642639.html): 競技プログラミングを始める前に読んだ。
+- [成瀬は天下を取りにいく](https://amzn.asia/d/edZIuQf): 2024年に久しぶりに読んだ小説。
+- [四畳半神話大系 森見登美彦](https://amzn.asia/d/hCaldY5): 2020年に京都に行く前に読んだ。
+- [太陽の塔 森見登美彦](https://amzn.asia/d/hCaldY5): 2020年に京都に行く前に読んだ。
+- [有頂天家族](https://amzn.asia/d/443iKti): 2022年に京都を離れる前に慌てて読んだ。
+- [人工知能の見る夢は](https://amzn.asia/d/4YcivT8): 2019年ごろに読んだ。
+- [喜嶋先生の静かな世界](https://amzn.asia/d/3gpqo6k): 2018年に読んだ。大学院に行くきっかけになった。
+- [秒速5センチメートル](https://amzn.asia/d/4ogQYIu): 2023年に映像を見たので小説も読んでみた。
+- [サーキット・スイッチャー](https://amzn.asia/d/0eVCu09H): 2025年に温泉施設で読んだ。安野さんの好きそうな考え方が詰まっていて良かった。
+- [赤いオーロラの街で](https://amzn.asia/d/0eHPNOKl): 2020年に頃に読んだ。ITがなくなったら自分はどうなるのか考えるのが面白く、お気に入りの一冊。
 
 ---
 
 ## ビジネス書(一部)
 
-- [はじめる力](https://amzn.asia/d/gky9bbT)
-- [人を動かす](https://amzn.asia/d/3sQ9HaD)
-- [世界はシステムで動く ドメラ・H・メドウズ](https://amzn.asia/d/0B7aFD8)
-- [メモの魔力](https://amzn.asia/d/4xNLUpX)
-- [質問力](https://amzn.asia/d/6LY7sLe)
+- [はじめる力](https://amzn.asia/d/gky9bbT): 2024年に読んだ。デフォルトパブリック等自分が好きな考え方に名前があることを知れてよかった。
+- [人を動かす](https://amzn.asia/d/3sQ9HaD): 2022年社内異動をする際に役になった。
+- [世界はシステムで動く ドメラ・H・メドウズ](https://amzn.asia/d/0B7aFD8): 2025年のKent Beckの講演をきっかけにシステムシンキングについて知ったので読んだ。システムシンキングを学ぶとマクロな視点が得られる気がする。
+- [メモの魔力](https://amzn.asia/d/4xNLUpX): 2020年に就活対策で読んだ。とにかくなんでも言語化するようになったのはこの本の影響。
+- [質問力](https://amzn.asia/d/6LY7sLe): 2020年に就活対策で読んだ。なるべく人の話を聞いたら質問するようにしているのはこの本と指導教員の影響。
 - [FACTFULNESS](https://amzn.asia/d/7nnttuD) WIP
-- [コンサル1年目が学ぶこと](https://amzn.asia/d/aMHSH6C)
-- [図解でわかる!理工系のためのよい文章の書き方](https://www.shoeisha.co.jp/book/detail/9784798186771)
-- [すぐ動けない人のための時間割仕事術](https://publications.asahi.com/product/22678.html)
+- [コンサル1年目が学ぶこと](https://amzn.asia/d/aMHSH6C): 2022年に読んだ。社会人1年目として気が引き締まった。
+- [図解でわかる!理工系のためのよい文章の書き方](https://www.shoeisha.co.jp/book/detail/9784798186771): 2025年に会社でどの本をみんなに読ませるといいかと上司に言われて読んだ。個人的には読みやすかったのでこの本を推した。
+- [すぐ動けない人のための時間割仕事術](https://publications.asahi.com/product/22678.html): 2026年に育休中の時間をうまく活用するために読んだ。
 - [仕事を人生の目的にするな](https://amzn.asia/d/00tRjyPX)
+- [なぜ働いていると本が読めなくなるのか](https://amzn.asia/d/01xOiJmx): 2026年に読んだ。最近本が読めていないことに対する答えだけでなく、読書と人類の関わりについての歴史も面白かった。エッセンシャルになろうとしていた自分にのって適度なノイズも大切だと教えてくれた。
 
 ---
 
 ## 子育て
 
-- [ドリームマップ―子どもの“生きる力”をはぐくむコーチング](https://www.kinokuniya.co.jp/f/dsg-01-9784804761275)
-- [ウンコのおじさん](https://amzn.asia/d/bbNm7Pv)
-- [親子にやさしい　赤ちゃんの気質タイプ別ぐっすりねんねガイド](https://www.kawade.co.jp/sp/isbn/9784309295541/)
+- [ドリームマップ―子どもの“生きる力”をはぐくむコーチング](https://www.kinokuniya.co.jp/f/dsg-01-9784804761275): 2025年にさくっと読んだ。
+- [ウンコのおじさん](https://amzn.asia/d/bbNm7Pv): 2025年に読んだ。自分はウンコのおじさんとして子供と接していくのが最もバリューが出ると思った。
+- [親子にやさしい　赤ちゃんの気質タイプ別ぐっすりねんねガイド](https://www.kawade.co.jp/sp/isbn/9784309295541/): 2025年に読んだ。
 
 ---
 
 ## その他(一部)
 
-- [働かない勇気](https://amzn.asia/d/hgBEwiL)
-- [20代にしておきたい17のこと](https://amzn.asia/d/8LXxeH8)
-- [30代にしておきたい17のこと](https://amzn.asia/d/9hABnqe)
-- [疲労とは何か](https://amzn.asia/d/0B7aFD8)
+- [働かない勇気](https://amzn.asia/d/hgBEwiL): 2025年の育休に入る前に読んだ。働かないということは自分のことは自分でやるということにつながるので料理や裁縫のモチベが上がっている。
+- [20代にしておきたい17のこと](https://amzn.asia/d/8LXxeH8): 2024年に読んだ。2025年に体外発表をたくさんしたのとかはこの影響だと思う。
+- [30代にしておきたい17のこと](https://amzn.asia/d/9hABnqe): 2025年に読んだ。健康への投資としてランニングを始めたきっかけ。
+- [疲労とは何か](https://amzn.asia/d/0B7aFD8): 2024年に読んだ。科学的に疲労を解説している。
 - [サピエンス全史](https://amzn.asia/d/6gSJVVC) WIP
-- [パーティーが終わって中年が始まる](https://amzn.asia/d/0hm7nxp)
-- [自分の中に毒を持て 岡本太郎](https://amzn.asia/d/ed7Yuw4)
-- [うまくいっている人の考え方](https://amzn.asia/d/dz1UUae)
-- [ランニングする前に読む本](https://amzn.asia/d/akUbp6k)
-- [世界のエリート投資家は何を考えているのか: 「黄金のポートフォリオの作り方」](https://amzn.asia/d/cPkZzkf)
-- [デュアルキャリア・カップル――仕事と人生の３つの転換期を対話で乗り越える](https://eijipress.co.jp/products/2297)
-- [手紙屋](https://amzn.asia/d/03b31LSp)
-- [転職1年目の教科書](https://pub.jmam.co.jp/book/b582270.html)
+- [パーティーが終わって中年が始まる](https://amzn.asia/d/0hm7nxp): 2024年頃に読んだ。自分があったことのないタイプの人生について知れた。
+- [自分の中に毒を持て 岡本太郎](https://amzn.asia/d/ed7Yuw4): 2025年にYouTubeで岡本太郎が危険な方へすすめみたいなことを言っていたのに惹かれて読んだ。子供についての思想はあわんなとは思うが、人間は自分自身と戦うべきだし、やばいと思う方向に行くのはいいと思う。
+- [うまくいっている人の考え方](https://amzn.asia/d/dz1UUae): 2019年頃に読んだ。時々読むと心が落ち着く。
+- [ランニングする前に読む本](https://amzn.asia/d/akUbp6k): 2022年にランニングを始める前に読んだがメソッドはあまり実行せず。
+- [世界のエリート投資家は何を考えているのか: 「黄金のポートフォリオの作り方」](https://amzn.asia/d/cPkZzkf): 2025年に自分の投資があまりに適当だなと思ったので読んだ。実践はしていないが、ポートフォリオのリバランスという考え方は良さそう。
+- [デュアルキャリア・カップル――仕事と人生の３つの転換期を対話で乗り越える](https://eijipress.co.jp/products/2297): 2025年の育休中に読んだ。現状は特に困っていないが困ったらこの本に帰ってこようと思う。
+- [手紙屋](https://amzn.asia/d/03b31LSp): 2026年の転職活動を終えたあとに読んだ。これを読んで一旦転職活動をやめたあとに踏ん切りがついた気がしている。
+- [転職1年目の教科書](https://pub.jmam.co.jp/book/b582270.html): 2026年に社内異動のあとを考えて読んだ。自分のせいで出世が遅れる人がいるのを忘れるなという話と最初はちゃんと環境になじむことを大切にするという教訓を得た。
