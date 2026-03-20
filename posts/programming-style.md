@@ -9,7 +9,7 @@ tags: programming, tech
 - implicit importを避け、explicit importを使う。数が多い場合にはqualified importを使用する。
 - メソッドは純粋関数を優先する。
 - 変数名は単語の短さよりも可読性を優先する
-- nullを返すようなメソッドを作らない。必要な場合にはOptionalや空コレクション空配列を使う
+- nullを返すようなメソッドを作らない。必要な場合にはOptionalや空コレクションや空配列を使う
 - 例外は握りつぶさず、下位層のエラーメッセージや情報を含んでスローする。
 - 上層でのバリデーションで対応可能な例外はスローせず、上層でのバリデーションで対応する。
 - 回復不可能な状態には非チェック例外をスローする
@@ -53,10 +53,10 @@ tags: programming, tech
 
 ## テスト
 
-- Kent BeckのTDDを使用を好む
+- Kent BeckのTDDの使用を好む
 - 古典学派的なアプローチを優先する
  	- 統合テストはシステム境界（DB・外部APIなど）で主要な正常系・異常系のみを対象にする。
- 	- ドメインロジックの詳細はプロセス外依存と共有依存モックし、単体テストを優先する。
+ 	- ドメインロジックの詳細はプロセス外依存と共有依存をモックし、単体テストを優先する。
 - カバレッジは絶対視しないが、改善のため測定は行う
 - テスタビリティ向上のため、依存性注入を優先する。
 
@@ -65,7 +65,7 @@ tags: programming, tech
 ## GitHub運用
 
 - Conventional Commitsを行う
-- ブランチ名は冒頭にfeature/、hotfix/、documentation/ refactor/のいずれかをつける。
+- ブランチ名は冒頭にfeature/、hotfix/、documentation/、refactor/のいずれかをつける。
 - GitHub Security ScorecardをREADME.mdにつける
 - LICENSEはMIT or NOLICENSEを使用する
 
