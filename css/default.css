@@ -155,3 +155,10 @@ body {
   stroke-linecap: round;
   stroke-linejoin: round;
 }
+
+article img {
+  max-width: 45%;
+  height: auto;
+  display: block;
+  margin: 0.5rem 0;
+}
