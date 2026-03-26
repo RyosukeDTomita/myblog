@@ -1,5 +1,5 @@
 ---
-title: "木嶋神社(蚕ノ社)参拝"
+title: "木嶋神社(蚕ノ社) 参拝記録"
 date: 2024-09-09
 tags: travel, jinja, japan
 ---
