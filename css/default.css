@@ -162,3 +162,11 @@ article img {
   display: block;
   margin: 0.5rem 0;
 }
+
+blockquote {
+  border-left: 3px solid #4a5568;
+  margin: 1rem 0;
+  padding: 0.4rem 1rem;
+  color: #9ca5b3;
+  background: #1b202b;
+}
