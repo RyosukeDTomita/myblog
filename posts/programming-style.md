@@ -10,7 +10,9 @@ tags: programming, tech
 - 変数は不変(immutable)な状態を優先する。
 - implicit importを避け、explicit importを使う。数が多い場合にはqualified importを使用する。
 - メソッドは純粋関数(pure function)を優先する。
-- ヘキサゴナルアーキテクチャ(Hexagonal Architecture)より、関数型アーキテクチャ(Functional Architecture)を優先し、関数的核(functional core)と可変殻(mutable shell)の分離を基本とする。ドメイン・ロジック(Domain Logic)は純粋関数として実装し、副作用(side effect)を伴う処理はアプリケーション・サービス層(Application Service Layer)に分離する。外部依存(external dependency)はドメイン層(Domain Layer)で定義されたインターフェースを介して扱う(インターフェースは実装の差し替えではなく、ドメインが外部依存を扱わないようにすることが目的)。
+- ヘキサゴナルアーキテクチャ(Hexagonal Architecture)より、関数型アーキテクチャ(Functional Architecture)を優先し、関数的核(functional core)と可変殻(mutable shell)の分離を基本とする。
+  - ドメイン・ロジック(Domain Logic)は純粋関数として実装し、副作用(side effect)を伴う処理はアプリケーション・サービス層(Application Service Layer)に分離する。
+  - 外部依存(external dependency)はドメイン層(Domain Layer)で定義されたインターフェースを介して扱う(インターフェースは実装の差し替えではなく、ドメインが外部依存を扱わないようにすることが目的)。
 - アプリケーション・サービス層では、外部状態(DBや外部API)の取得および処理のオーケストレーションを担う。パフォーマンス最適化や外部状態に強く依存する判断に限り、意思決定の一部をアプリケーション層で行うことを許容するが、本質的なビジネスルールはドメイン層に保持する。
 - nullを返すようなメソッドを作らないよう心がける。可能なら、Optionalや空コレクションや空配列を使う
 - 例外は握りつぶさず、下位層のエラーメッセージや情報を含んでthrowする。
