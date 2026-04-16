@@ -53,6 +53,7 @@ tags: daily, book
 - [Javaビルドツール入門 Maven/Gradle/SBT/Bazel対応](https://amzn.asia/d/81ejQFX): 研修でJavaのビルドツールについて学べなかったのでMavenについて学ぶ目的で読んだ。
 - [Effective java 第3版](https://www.maruzen-publishing.co.jp/book/b10120506.html)WIP: 2022年に購入するも4ヶ月くらいかけて半分読み断念。2025年くらいに開くと割と読めるようになっており、最近ちまちま読んでいる。
 - [Javaのラムダ式をさらりと理解するための解説書](https://amzn.asia/d/gJcBouW): 2022年にEffective Javaを読んだがLambda式がいまいち理解できなかったため、読んだ。
+- [プロになるためのSpring入門 ――ゼロからの開発力養成講座](https://gihyo.jp/book/2023/978-4-297-13613-0): 2026年4月からSpringを使うプロジェクトに参画することになったので慌てて読んだ。SpringはDIコンテナを理解できると後が結構入ってきやすくなるのでDIコンテナの記述がわかりやすくてありがたかった。
 
 #### Java Script系
 
