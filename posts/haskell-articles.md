@@ -1,7 +1,7 @@
 ---
-title: 自分のHaskell記事まとめ
+title: My Haskell articles
 date: 2026-05-15
-tags: haskell
+tags: haskell, links
 ---
 
 Qiitaに投稿した自分のHaskell記事の一覧。
@@ -10,6 +10,15 @@ Qiitaに投稿した自分のHaskell記事の一覧。
 
 - [関数型プログラミングを知らない人向けに、「Haskellって何が面白いの?」と聞かれた時の回答](https://qiita.com/sigma_devsecops/items/3f2a397e944401fcc6cb)
 - [Haskellのfoldl、foldl'、foldrを比較してみた](https://qiita.com/sigma_devsecops/items/206874ce5130abe280da)
+
+---
+
+## よく見返すやつ
+
+自信作ではないが、自分が良く必要になって参照するやつ。
+
+- [純粋関数で状態を管理する mapAccumLでよりエレガントに](https://qiita.com/sigma_devsecops/items/41094693d7f95446c2ac)
+- [Nix FlakeでHaskell環境を作ってみた](https://qiita.com/sigma_devsecops/items/b9b0597d684775fb8955)
 
 ---
 
