@@ -57,8 +57,11 @@ tags: programming, tech
 - 自前の再帰関数よりも、`foldr`、`foldl'`、`mapAccumL`を優先して使用する。
 - 関数の本体が型宣言と近くなるほうが可読性が良いと感じるので`let`よりも`where`を優先して使う。ガードをまたがずに変数を定義したい場合やリスト内包表記の中など`let`しか使えない場面`let`を使う。
 - lambda式よりも部分適用を優先する。e.g. `map (\x -> x + 10)`よりも`map (+10)`を使う。
-- lambda式よりも関数合成を優先する。e.g. 
+- lambda式よりも関数合成を優先する。
 - lambda式は高階関数に渡す、もしくは1度だけ使う関数を使うときに使う。
+- 関数の型定義は必ず書く。
+- `Data.Array`よりも`Data.Vector`を優先する。
+- qualified importを使用する際にはimportしたのがなにかわかりやすくする。 e.g. NG例: `import Data.Set qualified as S` 良い例:  `import Data.Set qualified as Set`
 
 ---
 
