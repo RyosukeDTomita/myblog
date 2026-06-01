@@ -1,6 +1,6 @@
 ---
 title: "My Programming Style"
-date: 2026-04-06
+date: 2026-05-26
 tags: programming, tech
 ---
 
@@ -21,6 +21,7 @@ tags: programming, tech
 - 観察可能な振る舞い(observable behavior)のみを公開APIにするよう心がける。
 - コマンド・クエリ分離(Command Query Separation: CQS)を考慮する。
 - ガード節(early return)をバリデーションに使用する。ロジックの分岐はif elseを優先する
+- マジックナンバーを使用しない。
 
 ### テスト戦略
 
