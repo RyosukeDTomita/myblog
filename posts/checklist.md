@@ -22,7 +22,7 @@ tags: daily
 
 ## 1年の終わりにやること
 
-- 1年のふりかえりを書く
-- [git-wrapped.com](https://git-wrapped.com/)
-- Qiitaの今年のふりかえりをみる
-- [ITスキルセットを更新する](../my_skill/)
+- [ ] 1年のふりかえりを書く
+- [ ] [git-wrapped.com](https://git-wrapped.com/)
+- [ ] Qiitaの今年のふりかえりをみる
+- [ ] [ITスキルセットを更新する](../my_skill/)
