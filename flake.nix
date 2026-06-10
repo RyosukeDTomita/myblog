@@ -2,7 +2,7 @@
   description = "haskell site";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/24.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/25.05";
     flake-utils.url = "github:numtide/flake-utils";
     treefmt-nix.url = "github:numtide/treefmt-nix";
   };
@@ -19,7 +19,7 @@
           inherit system;
         };
 
-        hpkgs = pkgs.haskell.packages.ghc96;
+        hpkgs = pkgs.haskell.packages.ghc9102;
         siteBin = hpkgs.callCabal2nix "site" ./. { };
         site = pkgs.runCommand "myblog-site" {
           nativeBuildInputs = [ siteBin ];

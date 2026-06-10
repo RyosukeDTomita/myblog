@@ -1,9 +1,6 @@
----
-name: update-haskell-articles
-description: qiita-article-archiveからHaskellタグ記事を収集し、Qiita APIで初回投稿日を取得して myblog/posts/2026-05-15-haskell-articles.md を最新状態に更新する
-disable-model-invocation: true
-allowed-tools: Bash Read Edit Write
----
+______________________________________________________________________
+
+## name: update-haskell-articles description: qiita-article-archiveからHaskellタグ記事を収集し、Qiita APIで初回投稿日を取得して myblog/posts/2026-05-15-haskell-articles.md を最新状態に更新する disable-model-invocation: true allowed-tools: Bash Read Edit Write
 
 myblogのHaskell記事まとめ (`posts/2026-05-15-haskell-articles.md`) を最新の状態に更新する。
 
