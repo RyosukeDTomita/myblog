@@ -68,6 +68,8 @@ tags: programming, tech
 - 関数の型定義は視認性が良くなるので、必ず書く。
 - `Data.Array`よりも`Data.Vector`を優先する。
 - qualified importを使用する際にはimportしたのがなにかわかりやすくする。 e.g. NG例: `import Data.Set qualified as S` 良い例:  `import Data.Set qualified as Set`
+- `{-# OPTIONS_GHC -Wunused-imports #-}`を基本的につける。
+- 視認性の問題から、`()`よりも`$`を優先する。
 
 ### コメント
 
@@ -91,5 +93,17 @@ tags: programming, tech
 - ブランチ名は冒頭にfeature/、hotfix/、documentation/、refactor/のいずれかをつける。
 - GitHub Security ScorecardをREADME.mdにつける
 - LICENSEはMIT or NOLICENSEを使用する
+
+### Releaseについて
+
+[GitHubのReleasesでファイルを配る際のセキュリティ対策とその実践方法](https://zenn.dev/sigma_tom/articles/2f1949dd7658f0)に基づいてリリースする
+
+- Release自体の方式変更 --> Release artifactの差し替え防止
+  - Immutable Releasesを利用する
+  - Releaseの作者をGitHub Actionsにする
+
+- 署名の付与 --> GitHub アカウント乗っ取り時の不正リリース防止
+  - Release Tagに署名をうつ
+  - commitに署名をうつ
 
 ---

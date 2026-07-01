@@ -1,6 +1,6 @@
 ---
 title: My Haskell articles
-date: 2026-05-15
+date: 2026-06-22
 tags: haskell, links
 ---
 
@@ -28,6 +28,7 @@ Qiitaに投稿した自分のHaskell記事の一覧。
 - 2026-05-05 [Zedのv1.0がでたのでHaskell環境を作った。](https://qiita.com/sigma_devsecops/items/763c109c332d85d9686c)
 - 2026-04-05 [Haskellで正格評価を使うことで動作が変わる例 unsafeTake](https://qiita.com/sigma_devsecops/items/ee5395649c97d23969ea)
 - 2026-03-07 [Haskellのfoldl、foldl'、foldrを比較してみた](https://qiita.com/sigma_devsecops/items/206874ce5130abe280da)
+- 2026-06-20 [Haskellでは存在しない値をどう扱うか? 〜Maybeを使う〜](https://qiita.com/sigma_devsecops/items/4c9986b025a47e5bded8)
 
 ---
 
