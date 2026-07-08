@@ -1,6 +1,6 @@
 ---
 title: "定期的に確認するリスト"
-date: 2026-06-01
+date: 2026-07-01
 tags: daily
 ---
 
@@ -11,6 +11,7 @@ tags: daily
 - [ ] 旅行に行っていないか -> [行ったことある県などを更新する](../travel-japan/)
 - [ ] Claude Codeの`/insights`を実行する
 - [ ] IPhoneの写真のバックアップ
+- [ ] dotfilesの更新をGitHubにpush
 
 ---
 
