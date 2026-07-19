@@ -1,6 +1,6 @@
 ---
 title: My Haskell articles
-date: 2026-06-22
+date: 2026-07-19
 tags: haskell, links
 ---
 
@@ -10,6 +10,7 @@ Qiitaに投稿した自分のHaskell記事の一覧。
 
 - [関数型プログラミングを知らない人向けに、「Haskellって何が面白いの?」と聞かれた時の回答](https://qiita.com/sigma_devsecops/items/3f2a397e944401fcc6cb)
 - [Haskellのfoldl、foldl'、foldrを比較してみた](https://qiita.com/sigma_devsecops/items/206874ce5130abe280da)
+-  [「foldrで短絡できていませんでした」の反省札 #Haskell](https://qiita.com/sigma_devsecops/items/3234a53bb3d0e2d8ab8f)
 
 ---
 
@@ -24,11 +25,14 @@ Qiitaに投稿した自分のHaskell記事の一覧。
 
 ## 2026
 
+- 2026-07-11 [AtCoderのインタラクティブ問題をHaskellで解く方法](https://qiita.com/sigma_devsecops/items/6c84c48cf05f9629b513)
+- 2026-07-04 [「foldrで短絡できていませんでした」の反省札 #Haskell](https://qiita.com/sigma_devsecops/items/3234a53bb3d0e2d8ab8f)
+- 2026-06-20 [Haskellでは存在しない値をどう扱うか? 〜Maybeを使う〜](https://qiita.com/sigma_devsecops/items/4c9986b025a47e5bded8)
 - 2026-05-14 [関数型プログラミングを知らない人向けに、「Haskellって何が面白いの?」と聞かれた時の回答](https://qiita.com/sigma_devsecops/items/3f2a397e944401fcc6cb)
 - 2026-05-05 [Zedのv1.0がでたのでHaskell環境を作った。](https://qiita.com/sigma_devsecops/items/763c109c332d85d9686c)
 - 2026-04-05 [Haskellで正格評価を使うことで動作が変わる例 unsafeTake](https://qiita.com/sigma_devsecops/items/ee5395649c97d23969ea)
 - 2026-03-07 [Haskellのfoldl、foldl'、foldrを比較してみた](https://qiita.com/sigma_devsecops/items/206874ce5130abe280da)
-- 2026-06-20 [Haskellでは存在しない値をどう扱うか? 〜Maybeを使う〜](https://qiita.com/sigma_devsecops/items/4c9986b025a47e5bded8)
+-
 
 ---
 
