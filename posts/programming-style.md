@@ -1,6 +1,6 @@
 ---
 title: "My Programming Style"
-date: 2026-05-26
+date: 2026-07-24
 tags: programming, tech
 ---
 
@@ -12,6 +12,7 @@ tags: programming, tech
 - 変数名は単語の短さよりも可読性を優先する
 - 変数は不変(immutable)な状態を優先する。
 - implicit importを避け、explicit importを使う。数が多い場合にはqualified importを使用する。
+  - 未使用importは削除する。
 - メソッドは純粋関数(pure function)を優先する。
 - ガード節(early return)をバリデーションに使用する。ロジックの分岐はif elseを優先する
 - 観察可能な振る舞い(observable behavior)のみを公開APIにするよう心がける。
@@ -52,24 +53,32 @@ tags: programming, tech
 
 ### Haskell
 
+- 関数を作成する際には、型から情報が得られたほうが可読性が良いため、単相関数を優先する。
 - 条件分岐は以下の優先順位とする
   - パターンマッチ: 引数の構造で分岐できる場合 (優先度高)
   - ガード: 引数の値が満たす性質で分岐する (優先度中)
   - ifとcaseは必要に応じて使用する (優先度低)
     - case式: doブロックや`where`、`let`などの式の中で分岐したい時
+      - `Maybe`
     - if式: インラインでの簡単な条件分岐
 - ポイントフリースタイルはなるべく使わない。
-- 競技プログラミングの場合、入出力は`interact`を使用する。
 - 自前の再帰関数よりも、`foldr`、`foldl'`、`mapAccumL`を優先して使用する。
+- 非正格な演算子を使用する場合、`foldr`系列のshort-circuit(短絡)して効率化する。
 - 関数の本体が型宣言と近くなるほうが可読性が良いと感じるので`let`よりも`where`を優先して使う。ガードをまたがずに変数を定義したい場合やリスト内包表記の中など`let`しか使えない場面`let`を使う。
 - lambda式よりも部分適用を優先する。e.g. `map (\x -> x + 10)`よりも`map (+10)`を使う。
 - lambda式よりも関数合成を優先する。
 - lambda式は高階関数に渡す、もしくは1度だけ使う関数を使うときに使う。
 - 関数の型定義は視認性が良くなるので、必ず書く。
-- `Data.Array`よりも`Data.Vector`を優先する。
 - qualified importを使用する際にはimportしたのがなにかわかりやすくする。 e.g. NG例: `import Data.Set qualified as S` 良い例:  `import Data.Set qualified as Set`
-- `{-# OPTIONS_GHC -Wunused-imports #-}`を基本的につける。
 - 視認性の問題から、`()`よりも`$`を優先する。
+- ``{-# OPTIONS_GHC -Wunused-imports -Werror=incomplete-patterns #-}`で部分関数を避ける`
+- `{-# OPTIONS_GHC -Wunused-imports #-}`で未使用importを避ける。
+
+#### 競技プログラミングの場合の例外的処置
+
+- 入出力は`interact`を使用する。
+- 入力を信頼し、`head`などの部分関数を使っても良い。
+- TLEにならない範囲において、STモナドを使った破壊的変更よりもイミュータブルを優先する。
 
 ### コメント
 
