@@ -1,6 +1,6 @@
 ---
 title: "定期的に確認するリスト"
-date: 2026-07-01
+date: 2026-08-03
 tags: daily
 ---
 
@@ -12,6 +12,8 @@ tags: daily
 - [ ] Claude Codeの`/insights`を実行する
 - [ ] IPhoneの写真のバックアップ
 - [ ] dotfilesの更新をGitHubにpush
+- [ ] ブラウザのタブの整理
+- [ ] 月始めのマインドマップを書く
 
 ---
 

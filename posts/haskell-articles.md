@@ -23,7 +23,9 @@ Qiitaに投稿した自分のHaskell記事の一覧。
 
 ---
 
-## 2026
+## 日付順ソート
+
+### 2026
 
 - 2026-07-11 [AtCoderのインタラクティブ問題をHaskellで解く方法](https://qiita.com/sigma_devsecops/items/6c84c48cf05f9629b513)
 - 2026-07-04 [「foldrで短絡できていませんでした」の反省札 #Haskell](https://qiita.com/sigma_devsecops/items/3234a53bb3d0e2d8ab8f)
@@ -34,9 +36,7 @@ Qiitaに投稿した自分のHaskell記事の一覧。
 - 2026-03-07 [Haskellのfoldl、foldl'、foldrを比較してみた](https://qiita.com/sigma_devsecops/items/206874ce5130abe280da)
 -
 
----
-
-## 2025
+### 2025
 
 [アドベントカレンダー](https://qiita.com/advent-calendar/2025/haskell-atcoder)にあわせて書いた。
 
