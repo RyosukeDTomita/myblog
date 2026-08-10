@@ -163,6 +163,26 @@ article img {
   margin: 0.5rem 0;
 }
 
+/* mermaidの図。JSが読み込まれるまではソースがそのまま見える(描画後にSVGへ差し替わる) */
+pre.mermaid {
+  margin: 1rem 0;
+  padding: 0;
+  background: transparent;
+  overflow-x: auto;
+  text-align: center;
+}
+
+pre.mermaid code {
+  display: block;
+  text-align: left;
+  white-space: pre;
+}
+
+pre.mermaid svg {
+  max-width: 100%;
+  height: auto;
+}
+
 blockquote {
   border-left: 3px solid #4a5568;
   margin: 1rem 0;

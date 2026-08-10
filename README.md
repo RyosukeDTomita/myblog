@@ -48,6 +48,16 @@ ______________________________________________________________________
    Hello, world.
    ```
 
+1. Diagrams can be written as [mermaid](https://mermaid.js.org/) code blocks. They are rendered to SVG in the browser.
+
+   ````markdown
+   ```mermaid
+   mindmap
+     root((hello))
+       world
+   ```
+   ````
+
 1. Push to `main` branch and wait for GitHub Actions to build and deploy.
 
 1. Your blog will be available at `https://<username>.github.io/`.
@@ -57,6 +67,16 @@ ______________________________________________________________________
 ## For Developers
 
 ### Development server on localhost
+
+`js/mermaid.min.js` is not tracked by git (3.5MB), so fetch it once before building locally:
+
+```bash
+./scripts/fetch-mermaid.sh
+```
+
+`nix build .#site` does not need this step; `flake.nix` fetches the same file with `fetchurl`.
+When bumping the version, update `mermaidVersion` / `hash` in `flake.nix` and
+`MERMAID_VERSION` / `MERMAID_SHA256` in `scripts/fetch-mermaid.sh` together.
 
 ```bash
 cd /home/sigma/myblog

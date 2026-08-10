@@ -22,3 +22,6 @@ _site/
 
 .direnv/
 result
+
+# mermaid bundle is fetched by scripts/fetch-mermaid.sh (nix build uses flake.nix fetchurl)
+js/mermaid.min.js
