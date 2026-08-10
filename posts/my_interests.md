@@ -1,27 +1,22 @@
 ---
-title: "興味のあること、好きなもの"
+title: "今人生で大事にしたいこと、好きなものとか"
 date: 2026-08-10
 tags: daily
 ---
 
 ```mermaid
 mindmap
-  root((sigma(RyosukeDTomita)))
+root(sigma)
   旅行
     海
-    森・山
-      山登り
-        高尾山
-        島
+    島
+    山登り
+      高尾山
   プログラミング
     Haskell
-      圏論
+      数学
       CS
-        GC
         AtCoder
-    エディタ
-      NooVim
-      Zed
   食べ物
     鰻
     鯨
@@ -38,15 +33,14 @@ mindmap
   同じものを長く使う
     HHKB
       Professional JP
-        有線
+       有線
   サブカル
     ガンダム
       デスティニーガンダム
-      Z
-    攻殻機動隊
+      Zこと
   とりあえずやってみる
-    衝動的
+    衝動
     楽しさ
-    緩い計画
     自由度
+    冒険
 ```
