@@ -45,5 +45,17 @@ $inlineCss$
         </p>
       </div>
     </footer>
+    $if(mermaid)$
+      <script src="/js/mermaid.min.js"></script>
+      <script>
+        // pandocは <pre class="mermaid"><code>...</code></pre> を出力するが、
+        // mermaidは要素のinnerHTMLを図の定義として読むため、<code>を外しておく。
+        document.querySelectorAll("pre.mermaid > code").forEach(function (code) {
+          code.parentNode.textContent = code.textContent;
+        });
+        mermaid.initialize({ startOnLoad: false, theme: "dark" });
+        mermaid.run();
+      </script>
+    $endif$
   </body>
 </html>

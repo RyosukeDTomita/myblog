@@ -1,5 +1,6 @@
 {-# LANGUAGE OverloadedStrings #-}
 
+import Data.List (isInfixOf)
 import Hakyll
   ( Context,
     FeedConfiguration (..),
@@ -25,6 +26,7 @@ import Hakyll
     getResourceBody,
     hakyll,
     idRoute,
+    itemBody,
     listField,
     loadAll,
     loadAllSnapshots,
@@ -32,6 +34,7 @@ import Hakyll
     loadBody,
     makeItem,
     match,
+    noResult,
     pandocCompiler,
     recentFirst,
     relativizeUrls,
@@ -136,12 +139,22 @@ main = hakyll $ do
 postCtx :: Context String
 postCtx =
   inlineCssField
+    <> mermaidField
     <> dateField "date" "%Y-%m-%d"
     <> defaultContext
 
 inlineCssField :: Context String
 inlineCssField =
   field "inlineCss" (const $ loadBody "css/default.css")
+
+-- 記事本文にmermaidの図が含まれるときだけ真になるフィールド。
+-- pandocは ```mermaid を <pre class="mermaid"> に変換するので、それを目印にする。
+-- 3.5MBあるmermaid.min.jsを図のないページで読み込ませないためのフラグ。
+mermaidField :: Context String
+mermaidField = field "mermaid" $ \item ->
+  if "class=\"mermaid\"" `isInfixOf` itemBody item
+    then pure "true"
+    else noResult "no mermaid diagram in this page"
 
 postCtxWithTags :: Tags -> Context String
 postCtxWithTags tags =
