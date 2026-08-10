@@ -1,6 +1,6 @@
 ---
 title: "定期的に確認するリスト"
-date: 2026-08-03
+date: 2026-08-10
 tags: daily
 ---
 
@@ -9,11 +9,12 @@ tags: daily
 - [ ] Haskell記事を新たに書いていないか? -> [My Haskell Articlesを更新する](../haskell-articles/)
 - [ ] 高尾山に登っていないか?  -> [高尾山と人生を更新する](../takao/)
 - [ ] 旅行に行っていないか -> [行ったことある県などを更新する](../travel-japan/)
-- [ ] Claude Codeの`/insights`を実行する
+- [ ] Claude Codeの`/super-insights`を実行する
 - [ ] IPhoneの写真のバックアップ
 - [ ] dotfilesの更新をGitHubにpush
 - [ ] ブラウザのタブの整理
 - [ ] 月始めのマインドマップを書く
+- [ ] Amazonの欲しい物リストの棚おろし
 
 ---
 
