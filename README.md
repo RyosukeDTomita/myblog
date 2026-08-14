@@ -23,6 +23,7 @@ ______________________________________________________________________
 - Nix Flake
   - treefmt
 - Haskell
+  - GHC (nixpkgsのデフォルトバージョンに追従)
   - Hakyll
   - Cabal
   - Ormolu
