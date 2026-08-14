@@ -19,8 +19,18 @@
           inherit system;
         };
 
-        hpkgs = pkgs.haskell.packages.ghc9102;
-        siteBin = hpkgs.callCabal2nix "site" ./. { };
+        # デフォルトのパッケージセット(GHC 9.8.4)を使う。
+        # Hydraがビルド保証(キャッシュ)しているのはデフォルトセットだけなので、
+        # ghc9102などを明示指定するとhakyll/pandoc一式がCIで毎回フルコンパイルになる。
+        hpkgs = pkgs.haskellPackages;
+
+        # site.hsを変更していない限りHaskellの再コンパイルを避けるため、
+        # ビルドに必要なファイルだけをsrcにする(posts/を編集してもキャッシュが効く)。
+        siteSrc = pkgs.lib.sourceByRegex ./. [
+          "^site\\.hs$"
+          "^myblog\\.cabal$"
+        ];
+        siteBin = hpkgs.callCabal2nix "site" siteSrc { };
 
         # mermaidはgit管理せずビルド時に取得する(3.5MBあるため)。
         # バージョンを上げるときは scripts/fetch-mermaid.sh のMERMAID_VERSIONも揃えること。
