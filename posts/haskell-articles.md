@@ -1,13 +1,14 @@
 ---
-title: My Haskell articles
+title: My Haskell articles and presentation material
 date: 2026-07-19
 tags: haskell, links
 ---
 
-Qiitaに投稿した自分のHaskell記事の一覧。
+Qiitaに投稿した自分のHaskell記事の一覧及び発表資料
 
 ## 自分の中でのお気に入り
 
+- [なぜHaskellは美しいと言われるのか? - Slidev](https://ryosukedtomita.github.io/Slidev/2026-08-28/): [Netadashi Meetup #17](https://peatix.com/event/5095532)発表資料
 - [関数型プログラミングを知らない人向けに、「Haskellって何が面白いの?」と聞かれた時の回答](https://qiita.com/sigma_devsecops/items/3f2a397e944401fcc6cb)
 - [Haskellのfoldl、foldl'、foldrを比較してみた](https://qiita.com/sigma_devsecops/items/206874ce5130abe280da)
 -  [「foldrで短絡できていませんでした」の反省札 #Haskell](https://qiita.com/sigma_devsecops/items/3234a53bb3d0e2d8ab8f)
@@ -27,6 +28,8 @@ Qiitaに投稿した自分のHaskell記事の一覧。
 
 ### 2026
 
+- 2026-08-28 [なぜHaskellは美しいと言われるのか? - Slidev](https://ryosukedtomita.github.io/Slidev/2026-08-28/): [Netadashi Meetup #17](https://peatix.com/event/5095532)発表資料
+- 2026-08-05 [Haskellでクラウドネイティブに挑戦する~musl静的バイナリをk3sで動かしてみた〜 #kubernetes](https://qiita.com/sigma_devsecops/items/a8ef33ddc89ec319fc0f)
 - 2026-07-11 [AtCoderのインタラクティブ問題をHaskellで解く方法](https://qiita.com/sigma_devsecops/items/6c84c48cf05f9629b513)
 - 2026-07-04 [「foldrで短絡できていませんでした」の反省札 #Haskell](https://qiita.com/sigma_devsecops/items/3234a53bb3d0e2d8ab8f)
 - 2026-06-20 [Haskellでは存在しない値をどう扱うか? 〜Maybeを使う〜](https://qiita.com/sigma_devsecops/items/4c9986b025a47e5bded8)
