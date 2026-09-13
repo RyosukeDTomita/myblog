@@ -44,10 +44,12 @@ tags: daily, book
   ![オオサンショウウオの夏](../assets/childhood-favorites/oosanshouuo-no-natsu.webp)
 - [チョコレート戦争](https://www.rironsha.com/book/00502)
   ![チョコレート戦争](../assets/childhood-favorites/chocolate-sensou.webp)
-- [ぼくらの七日間戦争](https://www.kadokawa.co.jp/product/200806000347/)
+- [ぼくらの七日間戦争](https://amzn.asia/d/028g8gcP)
   ![ぼくらの七日間戦争](../assets/childhood-favorites/bokura-no-nanokakan-sensou.webp)
 - [ひみつのかたつむり号](https://ndlsearch.ndl.go.jp/books/R100000002-I000001435632)
   ![ひみつのかたつむり号](../assets/childhood-favorites/himitsu-no-katatsumuri-gou.webp)
+- [夏の庭―The Friends](https://amzn.asia/d/017SvXz6)
+  ![夏の庭―The Friends](../assets/childhood-favorites/natsu-no-niwa.webp)
 
 ---
 
