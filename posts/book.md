@@ -1,6 +1,6 @@
 ---
 title: "読んだ本リスト"
-date: 2026-09-14
+date: 2026-09-28-
 tags: daily, book
 ---
 
@@ -12,6 +12,19 @@ tags: daily, book
 - WIPマークについて: 現在進行系で読んでいるものかつ、該当の本から学んだことを活かせているものに付与する(完全な積読にはWIPマークはつけず、このリストに載せない)
 
 ---
+
+## 自分の人生に強い影響を与えた本
+
+- [新しいLinuxの教科書](https://www.sbcr.jp/product/4797380941/): 2018年
+- [実践Vim: 思考のスピードで編集しよう!](https://tatsu-zine.com/books/practical-vim): 2018年
+- [スマートPythonプログラミング: Pythonのより良い書き方を学ぶ](https://amzn.asia/d/hFav4vb): 2021年
+- [プログラマー脳](https://www.shuwasystem.co.jp/book/9784798068534.html): 2022年
+- [人を動かす](https://amzn.asia/d/3sQ9HaD): 2022年
+- [アマテラスの暗号](https://amzn.asia/d/2QmlMUq): 2022年頃
+- [テスト駆動開発](https://shop.ohmsha.co.jp/shopdetail/000000004967/): 2024年1月
+- [単体テストの考え方/使い方](https://book.mynavi.jp/ec/products/detail/id=134252): 2024年上期
+- [自分を再生させるためのユング心理学入門](https://www.njg.co.jp/book/9784534060198/): 2026年8月
+- [すごいHaskell楽しく学ぼう!](https://www.ohmsha.co.jp/book/9784274068850.html): 2026年9月
 
 ## 技術書
 
@@ -65,6 +78,12 @@ tags: daily, book
 
 - [プロを目指す人のためのRuby 入門 第2版](https://gihyo.jp/dp/ebook/2021/978-4-297-12438-0): 2023年にRubyってどんなプログラミング言語か知りたくて読んだ。
 
+#### Haskell
+
+- [関数プログラミング実践入門](https://gihyo.jp/book/2016/978-4-7741-8390-9): 関数型言語であるHaskellをいじりたくなったので読んだ。Haskell入門書というだけでなく、関数型言語とはなにかを知るのに役に立った。
+- [Haskellで戦う競技プログラミング](https://lab.miz-ar.info/kyopro-haskell/) WIP 最後の章のDPの部分だけ読めていない。
+- [すごいHaskell楽しく学ぼう!](https://www.ohmsha.co.jp/book/9784274068850.html): 2026年2月に買ってダラダラ読んでいたが、AtCoderをやりながら学ぶスタイルだとHaskellの機能について学びきれないと思ったので2026年9月に趣味プログラミングのほとんどの時間を投下して1ヶ月で読み切った。Functorまでは自力でなんとなく理解していたが、モノイドやApplicative、Monad、Zipperであったり、ストリームらへんを体系的に学ぶことができて本当に読んで良かったと思った。
+
 ---
 
 ### 設計/リファクタリング/テスト
@@ -73,13 +92,11 @@ tags: daily, book
 - [リーダブルコード](https://www.oreilly.co.jp/books/9784873115658/): 2019年くらいに大学の生協で立ち読みした。
 - [良いコードを書く技術](https://gihyo.jp/book/2021/978-4-297-12048-1): 2022年くらいに読んだ記憶。
 - [テスト駆動開発](https://shop.ohmsha.co.jp/shopdetail/000000004967/): 2024年にテストコードが残っていない案件に入った際に、自分はテストを書こうと思い、原典である本書を読んだ。2025年にKent Beck氏の来日に合わせて洋書版も買い、一緒に写真を取ってもらったのはいい思い出。
-- [単体テストの考え方/使い方](https://book.mynavi.jp/ec/products/detail/id=134252): TDDについて知ったが、良いテストって何だ?と思っていたところをサポーターズのイベントでこの本いいよと勧めてもらい読んだ。関数型言語に興味を持つきっかけにもなった。
+- [単体テストの考え方/使い方](https://book.mynavi.jp/ec/products/detail/id=134252): 2024年上期に読んだ。TDDについて知ったが、良いテストって何だ?と思っていたところをサポーターズのイベントでこの本いいよと勧めてもらい読んだ。関数型言語に興味を持つきっかけにもなった。
 - [プログラマー脳](https://www.shuwasystem.co.jp/book/9784798068534.html): 2022年に現在の妻からjnitoさんにとりあえず読むように言われた本だと聞いたので自分も読んだ。これまで他人が書いたコードに対する抵抗感があった理由がわかり、納得した。
 - [プリンシパルオブプログラミング](https://www.shuwasystem.co.jp/book/9784798046143.html): 社会人3年目までに知っておきたい内容とどこかに書いてあったので2024年に滑り込みで読んだ。
 - [Java言語で学ぶデザインパターン入門 第3版](https://www.hyuki.com/dp/) WIP
 - [良いコード／悪いコードで学ぶ設計入門 ―保守しやすい 成長し続けるコードの書き方](https://gihyo.jp/book/2025/978-4-297-14622-1) WIP
-- [関数プログラミング実践入門](https://gihyo.jp/book/2016/978-4-7741-8390-9): 関数型言語であるHaskellをいじりたくなったので読んだ。Haskell入門書というだけでなく、関数型言語とはなにかを知るのに役に立った。
-- [Haskellで戦う競技プログラミング](https://lab.miz-ar.info/kyopro-haskell/) WIP 最後の章のDPの部分だけ読めていない。
 
 ---
 
