@@ -1,6 +1,6 @@
 ---
 title: "読んだ本リスト"
-date: 2026-09-28-
+date: 2026-09-28
 tags: daily, book
 ---
 
