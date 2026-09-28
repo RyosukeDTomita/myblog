@@ -126,7 +126,8 @@ def pw(*args, timeout=300):
 
 def require_session():
     out = pw('tab-list', timeout=120)
-    if 'booklog' not in out and 'Open tabs' not in out:
+    # 出力形式が CLI のバージョンで変わる(旧: "Open tabs" 見出し / 新: "### Result" + "(current)")
+    if not any(k in out for k in ('booklog', 'Open tabs', '(current)')):
         sys.exit('chrome セッションにアタッチできていない。\n'
                  '  npx -y @playwright/cli@latest attach --cdp=chrome\n'
                  'を実行し、Chrome 側の接続許可プロンプトを承認してから再実行すること。')
@@ -344,11 +345,23 @@ def main():
     # 2. 本棚と突き合わせる
     shelf = export_shelf()
     print(f'\n本棚: {len(shelf)}冊')
-    to_add, to_update = [], []
+    # 同じ本が複数の見出しに載ることがある(「自分の人生に強い影響を与えた本」など)。
+    # アイテムID単位でまとめ、タグは和集合、どれか1つでもWIPなら「いま読んでる」にする
+    merged = {}
     for b in books:
         item_id = resolved.get(b['title'])
         if not item_id:
             continue
+        if item_id not in merged:
+            merged[item_id] = dict(b)
+            continue
+        m = merged[item_id]
+        m['tags'] = ' '.join(dict.fromkeys((m['tags'] + ' ' + b['tags']).split()))
+        if b['status'] == 'いま読んでる':
+            m['status'] = 'いま読んでる'
+
+    to_add, to_update = [], []
+    for item_id, b in merged.items():
         row = shelf.get(item_id)
         if row is None:
             to_add.append({'id': item_id, **b})

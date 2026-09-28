@@ -4,6 +4,8 @@ date: 2026-09-28
 tags: daily, book
 ---
 
+[ブクログリンク](https://booklog.jp/users/sigma1881)
+
 ## 読んだ本リストの記載方針
 
 - 紙/電子は問わないが，一般に公開されていないもの(研修のテキスト等)は記載しない。
@@ -25,6 +27,8 @@ tags: daily, book
 - [単体テストの考え方/使い方](https://book.mynavi.jp/ec/products/detail/id=134252): 2024年上期
 - [自分を再生させるためのユング心理学入門](https://www.njg.co.jp/book/9784534060198/): 2026年8月
 - [すごいHaskell楽しく学ぼう!](https://www.ohmsha.co.jp/book/9784274068850.html): 2026年9月
+
+---
 
 ## 技術書
 
