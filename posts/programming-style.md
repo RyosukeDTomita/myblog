@@ -21,6 +21,7 @@ tags: programming, tech
   - アプリケーション・サービス層(Application Service Layer)では、外部状態(DBや外部API)の取得および処理のオーケストレーションを担う
   - パフォーマンス最適化や外部状態に強く依存する判断に限り、意思決定の一部をアプリケーション・サービス層で行うことを許容する
 - コマンド・クエリ分離(Command Query Separation: CQS)を考慮する
+- テストで表現できることは自然言語で書かない。
 
 ### Haskell
 
@@ -85,9 +86,7 @@ tags: programming, tech
 - 不変クラス(Immutable Class)、値オブジェクト(Value Object)を優先する
 - 回復不可能な状態には非チェック例外(Unchecked Exception)としてthrowする
 
----
-
-## (テスト戦略)
+### (テスト戦略)
 
 (LLMありきだと前提が変わってはいるため、手でコードを書いている前提での記載)
 
@@ -131,11 +130,56 @@ tags: programming, tech
 ### 自分の管理外のOSS活動
 
 - そのリポジトリのルールを最優先にする
+  - commit messageのスタイル
+  - ブランチ名
+  - PRテンプレート
 - 手でコードを書く。理由: 1つのPRから得られる自分の理解の質を最大にするため
   - (自分のレベル感的に)手でコードを書く程度の情熱がないなら、PRは出さずにForkして自分用に使うべき
 - LLMを使った場合は、IssueやPRにLLMを使用した範囲を明示的に記載する。参考: [GHC Policy on LLM contributions](https://gitlab.haskell.org/ghc/ghc/-/wikis/contributing/AI)
 - LLMをコード生成以外でも使用した場合には、commitに`Assisted-By:`を適切につける
 - コメントをくれた人やreviewerには`Reviewed-by:`、`Suggested-by:`、`Co-authored-by:`を忘れずにつける。
 
+#### PRのテンプレート(指定がない場合)
+
+```
+`fix [fix-me]()
+
+## AI Policy
+
+- LLM assistance: Claude Code was used while preparing this contribution.
+  I used it as a research aid while investigating the issue, and then had it
+  review the changes as an additional pair of eyes. However, I wrote all of
+  the code myself.
+- As a non-native English speaker, I also used machine translation to help
+  write the English text (commit messages, comments, and this description).
+  I have carefully reviewed all submitted material and take full responsibility
+  for it under [GHC Policy on LLM contributions (P3)](https://gitlab.haskell.org/ghc/ghc/-/wikis/contributing/AI).
+
 ---
+
+## Cause
+
+Issueの原因などを書く
+
+
+---
+
+## Fix
+
+修正内容を書く
+
+---
+
+## How I tested
+
+- [ ] Unit tests pass.
+
+---
+
+## Something I’d like to discuss
+
+あれば
+
+---
+```
 

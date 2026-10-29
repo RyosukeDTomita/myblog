@@ -1,4 +1,10 @@
 <section>
+  $if(isHome)$
+    <p class="greeting">
+      AIにコンテキストとして渡すこと/自分がどこからでも閲覧できるよう公開している個人ブログ。<br>
+      他人が閲覧することを前提にしていないため、読んで得られるものは自分の趣味嗜好程度と思われる。
+    </p>
+  $endif$
   <h2>Recent posts</h2>
   <p class="post-tags">Browse by tags: <a href="/tags/">tag search</a></p>
   $if(tagcloud)$

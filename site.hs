@@ -7,6 +7,7 @@ import Hakyll
     Identifier,
     Tags,
     bodyField,
+    boolField,
     buildTags,
     compile,
     compressCssCompiler,
@@ -92,6 +93,7 @@ main = hakyll $ do
             listField "posts" (postCtxWithTags tags) (pure posts)
               <> field "tagcloud" (const $ renderTagList tags)
               <> constField "title" "Home"
+              <> boolField "isHome" (const True)
               <> inlineCssField
               <> defaultContext
       makeItem ("" :: String)
