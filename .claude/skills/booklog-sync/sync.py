@@ -2,20 +2,18 @@
 """posts/book.md をブクログ(booklog.jp)の本棚に同期する。
 
 処理の流れ:
-  1. posts/book.md を解析して 題名 / URL / WIPマーク / 見出し階層 を取り出す
+  1. posts/book.md を解析して 題名 / URL / WIPマーク を取り出す
   2. 題名 -> アイテムID(ASIN / ISBN-10) を ids.json から引く。未知のものだけ解決する
   3. 解決したIDがブクログに実在するか /item/1/{id} で確認する
-  4. 現在の本棚をエクスポートして差分を取る
-  5. 未登録の本を CSV まとめて登録で追加し、読書状況/タグが変わった本を個別に更新する
+  4. 各アイテムの編集ページから現在の読書状況を読んで差分を取る
+  5. 未登録の本を /api/book/add で追加し、読書状況が変わった本を個別に更新する
+
+タグは付けない(ユーザーの方針)。ブクログ側に既にあるタグはそのまま残す。
 
 ブクログの操作はログイン済みの Chrome に playwright-cli でアタッチして行う。
 """
 
 import argparse
-import base64
-import csv
-import datetime
-import io
 import json
 import os
 import re
@@ -85,32 +83,21 @@ def find_isbn10(text: str):
 # book.md の解析
 # --------------------------------------------------------------------------
 
-def norm_tag(s: str) -> str:
-    """見出しをタグに変換する。タグはスペース区切りなので内部の空白は詰める。"""
-    return re.sub(r'\s+', '', re.sub(r'[(（]一部[)）]', '', s))
-
-
 def parse_book_md(path: str):
-    h2 = h3 = h4 = None
     books = []
     for ln in open(path, encoding='utf-8'):
         ln = ln.rstrip('\n')
-        if ln.startswith('#### '):
-            h4 = ln[5:].strip()
-        elif ln.startswith('### '):
-            h3, h4 = ln[4:].strip(), None
-        elif ln.startswith('## '):
-            h2, h3, h4 = ln[3:].strip(), None, None
         m = re.match(r'^- \[(.+?)\]\((\S+?)\)(.*)$', ln)
         if not m:
             continue
         title, url, rest = m.group(1), m.group(2), m.group(3)
-        sections = [s for s in (h2, h3, h4) if s]
+        # 記載方針の節にある本棚自体へのリンクは本ではない(本文の ISBN を誤って拾う)
+        if 'booklog.jp' in url:
+            continue
         books.append({
             'title': title,
             'url': url,
             'status': 'いま読んでる' if 'WIP' in rest else '読み終わった',
-            'tags': ' '.join(dict.fromkeys(norm_tag(s) for s in sections)),
         })
     return books
 
@@ -220,58 +207,58 @@ def search_booklog(title: str, limit=6):
 # 本棚の読み書き
 # --------------------------------------------------------------------------
 
-def export_shelf():
-    """本棚をエクスポートして {アイテムID: 行} を返す。列は下の SHELF_COLS を参照。"""
-    pw('goto', 'https://booklog.jp/export')
-    href = js("() => { const a = [...document.querySelectorAll('a')]"
-              ".find(x => /download\\.booklog\\.jp/.test(x.href)); return {u: a ? a.href : ''}; }")['u']
-    if not href:
-        raise RuntimeError('エクスポートのダウンロードリンクが見つからない')
-    raw = subprocess.run(['curl', '-s', href], capture_output=True, timeout=180).stdout
-    if not raw:
-        return {}
-    rows = list(csv.reader(io.StringIO(raw.decode('cp932', 'replace'))))
-    return {r[1]: r for r in rows if len(r) > 7}
+def read_shelf(ids):
+    """各アイテムの編集ページを引いて {アイテムID: 読書状況} を返す(未登録のものは含めない)。
+
+    /export はメールでリンクを送る非同期方式に変わったため、本棚の状態は編集ページから読む。
+    未登録アイテムの編集ページは 200 を返すが編集フォームを持たない。
+    """
+    names = {v: k for k, v in STATUS_VALUE.items()}
+    shelf = {}
+    for i in range(0, len(ids), 20):
+        chunk = ids[i:i + 20]
+        expr = '''async () => {
+          const out = [];
+          for (const id of %s) {
+            const r = await fetch('/edit/1/' + id, {credentials:'include'});
+            const doc = new DOMParser().parseFromString(await r.text(), 'text/html');
+            const form = [...doc.querySelectorAll('form')]
+              .find(f => [...f.elements].some(e => e.name === 'create_on_d'));
+            if (form) {
+              const st = doc.querySelector('input[name="status_1_' + id + '"]:checked');
+              out.push([id, st ? st.value : '']);
+            }
+            await new Promise(s => setTimeout(s, 250));
+          }
+          return out;
+        }''' % json.dumps(chunk)
+        for id_, st in js(expr):
+            shelf[id_] = names.get(st, st)
+    return shelf
 
 
-# エクスポートCSVの列: サービスID, アイテムID, 13桁ISBN, カテゴリ, 評価, 読書状況,
-#                      レビュー, タグ, 読書メモ, 登録日時, 読了日, 題名, 著者, 出版社, 発行年, 種別, ページ数
-SHELF_STATUS, SHELF_TAGS, SHELF_TITLE = 5, 7, 11
+def add_items(rows):
+    """本の詳細ページの「本棚に登録」ボタンと同じ API で1冊ずつ追加する。
 
-
-def import_csv(rows):
-    """まとめて登録(CSV)。既存アイテムは重複も更新もされず単に無視される。"""
-    now = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-    def q(v):
-        return '"' + str(v).replace('"', '""') + '"'
-    added = 0
-    for i in range(0, len(rows), 100):          # 一度に登録できるのは100件まで
-        chunk = rows[i:i + 100]
-        body = '\r\n'.join(
-            ','.join(q(c) for c in
-                     ['1', b['id'], isbn10_to_13(b['id']) if valid10(b['id']) else '',
-                      '-', '', b['status'], '', b['tags'], '', now, ''])
-            for b in chunk) + '\r\n'
-        b64 = base64.b64encode(body.encode('cp932', 'replace')).decode()
-        pw('goto', 'https://booklog.jp/input/file')
+    CSV まとめて登録はメールアドレス未認証だと受け付けられない(応答は 200 でも何も登録されない)ため使わない。
+    既に登録済みのアイテムに投げても重複はしない。
+    """
+    for b in rows:
         js('''async () => {
-          const bin = atob("%s"); const buf = new Uint8Array(bin.length);
-          for (let i = 0; i < bin.length; i++) buf[i] = bin.charCodeAt(i);
-          const fd = new FormData();
-          fd.append('input_file', new File([buf], 'import.csv', {type: 'text/csv'}));
-          fd.append('_method', 'default');
-          const r = await fetch('/input/file', {method: 'POST', body: fd, credentials: 'include'});
+          const r = await fetch('/api/book/add', {method: 'POST', credentials: 'include',
+            headers: {'content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
+                      'x-requested-with': 'XMLHttpRequest'},
+            body: new URLSearchParams({service_id: '1', id: %s, status: %s, secret: '0'})});
           return {status: r.status};
-        }''' % b64)
-        added += len(chunk)
-        time.sleep(2)                            # サーバ負荷への配慮
-    return added
+        }''' % (json.dumps(b['id']), json.dumps(STATUS_VALUE[b['status']])))
+        time.sleep(1)                            # サーバ負荷への配慮
+    return len(rows)
 
 
-def update_item(item_id, status, tags):
-    """既存アイテムの読書状況とタグを更新する。CSVインポートでは更新できないため個別に投げる。"""
+def update_item(item_id, status):
+    """既存アイテムの読書状況を更新する。追加 API は既存アイテムの読書状況を変えないため編集フォームから投げる。"""
     expr = '''async () => {
-      const id = %s, status = %s, tags = %s;
+      const id = %s, status = %s;
       const page = await (await fetch('/edit/1/' + id, {credentials:'include'})).text();
       const doc = new DOMParser().parseFromString(page, 'text/html');
       const form = [...doc.querySelectorAll('form')]
@@ -284,10 +271,9 @@ def update_item(item_id, status, tags):
         else fd.append(e.name, e.value);
       }
       fd.set('status_1_' + id, status);
-      fd.set('tags', tags);
       const r = await fetch('/edit/1/' + id, {method:'POST', body: fd, credentials:'include'});
       return {ok: r.status === 200, status: r.status};
-    }''' % (json.dumps(item_id), json.dumps(STATUS_VALUE[status]), json.dumps(tags))
+    }''' % (json.dumps(item_id), json.dumps(STATUS_VALUE[status]))
     return js(expr)
 
 
@@ -300,7 +286,7 @@ def main():
     ap.add_argument('--book-md', default='posts/book.md')
     ap.add_argument('--dry-run', action='store_true', help='差分を表示するだけで書き込まない')
     ap.add_argument('--no-update', action='store_true',
-                    help='新規追加のみ行い、既存本の読書状況/タグは更新しない')
+                    help='新規追加のみ行い、既存本の読書状況は更新しない')
     args = ap.parse_args()
 
     books = parse_book_md(args.book_md)
@@ -343,10 +329,11 @@ def main():
                 print(f'       (検索失敗: {e})')
 
     # 2. 本棚と突き合わせる
-    shelf = export_shelf()
-    print(f'\n本棚: {len(shelf)}冊')
+    goto_booklog()
+    shelf = read_shelf(sorted(set(resolved.values())))
+    print(f'\n本棚(book.md 掲載分): {len(shelf)}冊')
     # 同じ本が複数の見出しに載ることがある(「自分の人生に強い影響を与えた本」など)。
-    # アイテムID単位でまとめ、タグは和集合、どれか1つでもWIPなら「いま読んでる」にする
+    # アイテムID単位でまとめ、どれか1つでもWIPなら「いま読んでる」にする
     merged = {}
     for b in books:
         item_id = resolved.get(b['title'])
@@ -356,7 +343,6 @@ def main():
             merged[item_id] = dict(b)
             continue
         m = merged[item_id]
-        m['tags'] = ' '.join(dict.fromkeys((m['tags'] + ' ' + b['tags']).split()))
         if b['status'] == 'いま読んでる':
             m['status'] = 'いま読んでる'
 
@@ -365,7 +351,7 @@ def main():
         row = shelf.get(item_id)
         if row is None:
             to_add.append({'id': item_id, **b})
-        elif row[SHELF_STATUS] != b['status'] or row[SHELF_TAGS] != b['tags']:
+        elif row != b['status']:
             to_update.append({'id': item_id, 'row': row, **b})
 
     print(f'追加 {len(to_add)}件 / 更新 {len(to_update)}件')
@@ -373,11 +359,7 @@ def main():
         print(f'  + {b["id"]}  {b["title"][:50]}  [{b["status"]}]')
     for b in to_update:
         r = b['row']
-        print(f'  ~ {b["id"]}  {r[SHELF_TITLE][:40]}')
-        if r[SHELF_STATUS] != b['status']:
-            print(f'      読書状況: {r[SHELF_STATUS]} -> {b["status"]}')
-        if r[SHELF_TAGS] != b['tags']:
-            print(f'      タグ    : {r[SHELF_TAGS]} -> {b["tags"]}')
+        print(f'  ~ {b["id"]}  {b["title"][:40]}  読書状況: {r} -> {b["status"]}')
 
     if args.dry_run:
         print('\n--dry-run のため書き込みはしていない。')
@@ -385,10 +367,10 @@ def main():
 
     if to_add:
         goto_booklog()
-        print(f'\n{import_csv(to_add)}件を CSV まとめて登録で追加した。')
+        print(f'\n{add_items(to_add)}件を追加した。')
     if to_update and not args.no_update:
         goto_booklog()
-        ng = [b for b in to_update if not update_item(b['id'], b['status'], b['tags']).get('ok')]
+        ng = [b for b in to_update if not update_item(b['id'], b['status']).get('ok')]
         print(f'{len(to_update) - len(ng)}件を更新した。' + (f' 失敗 {len(ng)}件。' if ng else ''))
 
     # 3. 解決結果を書き戻して次回以降の再取得を省く
@@ -396,10 +378,11 @@ def main():
     json.dump(ids, open(IDS_PATH, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
 
     # 4. 反映確認
-    shelf = export_shelf()
+    goto_booklog()
+    shelf = read_shelf(sorted(set(resolved.values())))
     missing = [b['title'] for b in books
                if resolved.get(b['title']) and resolved[b['title']] not in shelf]
-    print(f'\n最終: 本棚 {len(shelf)}冊 / 未反映 {len(missing)}件'
+    print(f'\n最終: 本棚(book.md 掲載分) {len(shelf)}冊 / 未反映 {len(missing)}件'
           + (': ' + ', '.join(missing) if missing else ''))
 
 
