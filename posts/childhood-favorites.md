@@ -109,6 +109,10 @@ tags: daily, book
       ![超神龍バリアント・バデス](../assets/childhood-favorites/dm-variant-bades.webp)
     - [聖霊王アルカディアス](https://dm.takaratomy.co.jp/card/detail/?id=dm04-001)
       ![聖霊王アルカディアス](../assets/childhood-favorites/dm-arcadias.webp)
+    - [予言者クルト](https://dm.takaratomy.co.jp/card/detail/?id=dm10-076)
+      ![予言者クルト](../assets/childhood-favorites/dm-kurt.webp)
+    - [コッコ・ルピア](https://dm.takaratomy.co.jp/card/detail/?id=dm06-062)
+      ![コッコ・ルピア](../assets/childhood-favorites/dm-cocco-lupia.webp)
 
 ### ゲーム
 
@@ -140,6 +144,8 @@ tags: daily, book
   ![映画ドラえもん　のび太の新魔界大冒険 7人の魔法使い](../assets/childhood-favorites/doraemon-shin-makai-daibouken.webp)
 - [映画ドラえもん のび太の恐竜2006](https://doraeiga.com/2025/45thmatsuri/work/25.html)
   ![映画ドラえもん のび太の恐竜2006](../assets/childhood-favorites/doraemon-kyoryu-2006.webp)
+- [ポーラー・エクスプレス](https://eiga.com/movie/1602/)
+  ![ポーラー・エクスプレス](../assets/childhood-favorites/polar-express.webp)
 
 ### 歴史/偉人
 
@@ -184,6 +190,8 @@ tags: daily, book
   ![ソードアート・オンライン](../assets/childhood-favorites/sword-art-online.webp)
 - [新世紀エヴァンゲリオン](https://www.amazon.co.jp/dp/B07SH1QH4Q)
   ![新世紀エヴァンゲリオン](../assets/childhood-favorites/evangelion.webp)
+- テニスの王子様
+  ![テニスの王子様](../assets/childhood-favorites/prince-of-tennis.webp)
 
 ### その他
 
